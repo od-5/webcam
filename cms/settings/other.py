@@ -21,7 +21,7 @@ else:
              'ENGINE': 'django.db.backends.mysql',
              'NAME': 'rylcevalex$webcam',
              'USER': 'rylcevalex',
-             'PASSWORD': 'lTcnhJTH2',
+             'PASSWORD': '111111',
              'HOST': 'rylcevalex.mysql.pythonanywhere-services.com',
              'PORT': '',
          }
