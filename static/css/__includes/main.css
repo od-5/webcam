@@ -1,0 +1,120 @@
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+body {
+  position: relative;
+  height: auto;
+}
+.header {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 10px 0;
+}
+.header-submenu a {
+  font-size: 12px;
+  color: #666;
+}
+.header-submenu a:hover {
+  color: 333;
+}
+.main {
+  padding-top: 20px;
+  padding-bottom: 130px;
+}
+@media (max-width: 767px) {
+  .main {
+    padding-bottom: 20px;
+  }
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .footer {
+    position: relative;
+  }
+}
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+.footer ul li {
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .footer ul li {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .footer ul li:after {
+    content: '.';
+    display: inline;
+    position: absolute;
+    top: 17%;
+    right: 0;
+  }
+  .footer ul li:last-child:after {
+    display: none;
+  }
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.bottom-add {
+  margin-bottom: 20px;
+}
+.bottom-remove {
+  margin-bottom: 0;
+}
+.quickmenulist .list td {
+  padding: 0 10px;
+  text-align: center;
+  font-size: 11px;
+}
+.quickmenulist .list td a:hover {
+  text-decoration: none;
+}
+.table-list {
+  font-size: 12px;
+}
+.table-list thead {
+  background-color: #666;
+  color: #fff;
+  vertical-align: top;
+}
+.table-list thead tr th {
+  vertical-align: top;
+  font-weight: normal;
+}
+.table-list tbody {
+  background-color: #efefef;
+}
+.table-list tbody .total {
+  font-weight: bold;
+}
+.table-filter {
+  background-color: #efefef;
+  width: auto;
+}
+.table-filter__header {
+  font-weight: bold;
+}
+.form-filter {
+  font-size: 12px;
+}

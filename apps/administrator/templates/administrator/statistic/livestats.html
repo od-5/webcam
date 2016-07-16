@@ -1,0 +1,47 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Кто онлайн{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/statistic/__includes/statistic_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Кто онлайн</h2>
+    </div>
+    <div class="col-lg-12">
+      <table class="table table-condensed table-bordered table-list">
+        <thead>
+          <tr>
+            <th>Категория</th>
+            <th>Логин</th>
+            <th>Имя на сайте</th>
+            <th>Email</th>
+            <th>IP адрес</th>
+            <th>Местонахождение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Посетитель</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>163.158.238.83</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Клиент</td>
+            <td>123</td>
+            <td>Странник</td>
+            <td>1@mail.ru</td>
+            <td>93.180.207.34</td>
+            <td>Ukraine, Kiev</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-right small">
+        Всего найдено записей: <strong>2</strong>
+      </p>
+    </div>
+  </div>
+{% endblock %}

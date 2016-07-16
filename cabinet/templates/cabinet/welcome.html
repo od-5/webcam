@@ -1,0 +1,53 @@
+{% extends 'cabinet/cabinet_base.html' %}
+{% block title %}Выберите типа пользователя для входа{% endblock %}
+{% block header %}
+  <header class="header">
+    <div class="container-fluid">
+      <div>
+        <h1 class="bottom-add">Большой красивый логотип</h1>
+      </div>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          {% include 'cabinet/__includes/welcome_menu.html' with class="nav navbar-nav" %}
+        </div>
+      </nav>
+    </div>
+  </header>
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      {% if error %}
+        <div class="text-center sign-error">
+          <p class="alert alert-warning">{{ error }}</p>
+        </div>
+      {% endif %}
+      <h2 class="text-center bottom-add">
+        Вход для {% if usertype == 2 %}вебмастера{% elif usertype == 3 %}сео специалиста{% else %}администратора{% endif %}
+      </h2>
+    </div>
+    <div class="col-lg-12">
+      <div class="sign">
+        <form action="" role="form" method="post" class="bottom-add">{% csrf_token %}
+          <input type="hidden" name="usertype" value="{{ usertype|default:1 }}">
+          <div class="form-group">
+            <input type="text" name="username" id="id_username" placeholder="Логин" class="form-control">
+          </div>
+          <div class="form-group add-bottom">
+            <input type="password" name="password" id="id_password" placeholder="Пароль" class="form-control">
+          </div>
+          <div class="submit-row">
+            <input type="submit" value="Войти" class="btn btn-info">
+          </div>
+        </form>
+        <p class="small">Забыли пароль? Вы можете восстановить его <a href="#">здесь</a>.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block footer %}
+  <div>
+  {% include 'cabinet/__includes/welcome_menu.html' %}
+  <div class="clearfix"></div>
+  </div>
+{% endblock %}

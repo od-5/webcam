@@ -1,0 +1,151 @@
+html, body {
+  min-height: 100%;
+  height: 100%;
+}
+body {
+  position: relative;
+  height: auto;
+}
+.header {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 0 10px 0;
+  &-submenu {
+    a {
+      font-size: 12px;
+      color: #666;
+      &:hover {
+        color: 333;
+      }
+    }
+  }
+}
+.main {
+  padding-top: 20px;
+  padding-bottom: 130px;
+  @media (max-width: 767px) {
+    padding-bottom: 20px;
+  }
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  //height: 80px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #e5e5e5;
+  text-align: center;
+  @media (max-width: 767px) {
+    position: relative;
+  }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      padding: 10px;
+      position: relative;
+      @media (max-width: 767px) {
+        display: block;
+      }
+      @media (min-width: 768px) {
+        &:after {
+        content: '.';
+        display: inline;
+        position: absolute;
+        top: 17%;
+        right: 0;
+        }
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      //&:after {
+      //  content: '.';
+      //  display: inline;
+      //  position: absolute;
+      //  top: 17%;
+      //  right: 0;
+      //}
+      //&:last-child {
+      //  &:after {
+      //    display: none;
+      //  }
+      //}
+    }
+  }
+}
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+}
+.bottom {
+  &-add {
+    margin-bottom: 20px;
+  }
+  &-remove {
+    margin-bottom: 0;
+  }
+}
+.quickmenulist {
+  .list {
+    td {
+      padding: 0 10px;
+      text-align: center;
+      font-size: 11px;
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.table {
+  &-list {
+    font-size: 12px;
+    thead {
+      background-color: #666;
+      color: #fff;
+      vertical-align: top;
+      tr {
+        th {
+          vertical-align: top;
+          font-weight: normal;
+        }
+      }
+    }
+    tbody {
+      background-color: #efefef;
+      .total {
+        font-weight: bold;
+      }
+    }
+    //tr {
+    //  td:last-child{
+    //    text-align: right;
+    //  }
+    //}
+  }
+  &-filter {
+    background-color: #efefef;
+    width: auto;
+    &__header {
+      font-weight: bold;
+    }
+  }
+}
+.form {
+  &-filter {
+    font-size: 12px;
+  }
+}
