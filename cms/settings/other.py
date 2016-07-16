@@ -4,28 +4,28 @@ from .base import BASE_DIR
 
 YANDEX_MAPS_API_KEY = 'AO7kF1UBAAAA-akFCwIAR7_VYsSjwJ9g-dDEVHElLxuBQi8AAAAAAAAAAAAQMK4N7NYtvg4ALgMZ8-GRO_cQqQ=='
 
-# if socket.gethostname() == 'r420':
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'video',
-         'USER': 'video',
-         'PASSWORD': '1111',
-         'HOST': 'localhost',
-         'PORT': '',
-     }
-}
-# else:
-#     DATABASES = {
-#         'default': {
-#              'ENGINE': 'django.db.backends.mysql',
-#              'NAME': 'enjoyafrru_lift',
-#              'USER': 'enjoyafrru_lift',
-#              'PASSWORD': 'alena2010',
-#              'HOST': 'localhost',
-#              'PORT': '',
-#          }
-#     }
+if socket.gethostname() == 'r420':
+    DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.mysql',
+             'NAME': 'video',
+             'USER': 'video',
+             'PASSWORD': '1111',
+             'HOST': 'localhost',
+             'PORT': '',
+         }
+    }
+else:
+    DATABASES = {
+        'default': {
+             'ENGINE': 'django.db.backends.mysql',
+             'NAME': 'rylcevalex$webcam',
+             'USER': 'rylcevalex',
+             'PASSWORD': 'lTcnhJTH2',
+             'HOST': 'rylcevalex.mysql.pythonanywhere-services.com',
+             'PORT': '',
+         }
+    }
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
