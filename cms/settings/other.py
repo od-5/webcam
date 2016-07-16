@@ -24,7 +24,7 @@ else:
              'PASSWORD': '111111',
              'HOST': 'rylcevalex.mysql.pythonanywhere-services.com',
              'PORT': '',
-         }
+        }
     }
 
 TEMPLATE_LOADERS = (
