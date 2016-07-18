@@ -2,7 +2,7 @@
 {% load staticfiles %}
 {% block title %}Рабочий стол администратора{% endblock %}
 {% block header %}
-  <div class="container-fluid">
+  <div class="container">
     <div>
       <h1 class="bottom-add">Большой красивый логотип</h1>
     </div>
@@ -95,41 +95,41 @@
               <tbody>
                 <tr>
                   <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:customer_list' %}">
                       <img src="{% static 'administrator/icons/customers.png' %}" alt=""><br>
                       Управление клиентами
                     </a>
                   </td>
                   <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:customer_add' %}">
                       <img src="{% static 'administrator/icons/customer_add.png' %}" alt="">
                       <br>
                       Добавить нового клиента
                     </a>
                   </td>
                   <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:blockedlocations' %}">
                       <img src="{% static 'administrator/icons/blocked_locations.png' %}" alt="">
                       <br>
                       Заблокированные клиента и адреса
                     </a>
                   </td>
                   <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:membershiptransactions' %}">
                       <img src="{% static 'administrator/icons/membershiptransactions.png' %}" alt="">
                       <br>
                       Оплата за подписки
                     </a>
                   </td>
                   <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:chatlogs' %}">
                       <img src="{% static 'administrator/icons/chatlogs.png' %}" alt="">
                       <br>
                       Логи чатов
                     </a>
                   </td>
                   <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:badwords' %}">
                       <img src="{% static 'administrator/icons/bad_words.png' %}" alt="">
                       <br>
                       Плохие слова

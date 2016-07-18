@@ -111,6 +111,9 @@ body {
   }
 }
 .table {
+  &-center {
+    margin: 0 auto;
+  }
   &-list {
     font-size: 12px;
     thead {
@@ -136,11 +139,22 @@ body {
     //  }
     //}
   }
+  &-form {
+    margin: 0 auto;
+    width: auto;
+    background-color: #efefef;
+    font-weight: bold;
+  }
   &-filter {
     background-color: #efefef;
     width: auto;
     &__header {
       font-weight: bold;
+      td {
+        &:last-child {
+          vertical-align: middle;
+        }
+      }
     }
   }
 }
@@ -148,4 +162,7 @@ body {
   &-filter {
     font-size: 12px;
   }
+}
+.fieldrequired {
+  color: red;
 }

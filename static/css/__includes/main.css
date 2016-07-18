@@ -90,6 +90,9 @@ body {
 .quickmenulist .list td a:hover {
   text-decoration: none;
 }
+.table-center {
+  margin: 0 auto;
+}
 .table-list {
   font-size: 12px;
 }
@@ -108,6 +111,12 @@ body {
 .table-list tbody .total {
   font-weight: bold;
 }
+.table-form {
+  margin: 0 auto;
+  width: auto;
+  background-color: #efefef;
+  font-weight: bold;
+}
 .table-filter {
   background-color: #efefef;
   width: auto;
@@ -115,6 +124,12 @@ body {
 .table-filter__header {
   font-weight: bold;
 }
+.table-filter__header td:last-child {
+  vertical-align: middle;
+}
 .form-filter {
   font-size: 12px;
+}
+.fieldrequired {
+  color: red;
 }
