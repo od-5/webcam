@@ -1,0 +1,121 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Профиль вебмастера Webmstar login{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/webmasters/__includes/webmasters_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Профиль вебмастера Webmstar login</h2>
+    </div>
+    <div class="col-lg-8 col-lg-offset-2">
+      <ul class="nav nav-tabs bottom-add">
+        <li class="active">
+          <a data-toggle="tab" href="#reg_info">Информация о регистрации</a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#pay_info">Платёжная информация</a>
+        </li>
+        <li>
+          <a href="{% url 'cabinet:administrator:customer_list' %}?webmaster=1">Приведённые клиенты</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div id="reg_info" class="tab-pane fade in active">
+          <form method="post" action="" role="form">
+            <table class="table table-form table-bordered bottom-remove">
+              <tbody>
+                <tr class="text-center">
+                  <td colspan="2">Информация о регистрации</td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Логин</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right">Новый пароль</td>
+                  <td><input type="password" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right">Повторите новый пароль</td>
+                  <td><input type="password" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> e-mail</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> % выплат за клиентов</td>
+                  <td><input type="number" class="form-control" step="0.01"></td>
+                </tr>
+                <tr  class="text-center">
+                  <td colspan="2">
+                    <input type="submit" class="btn btn-info" value="Изменить">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+        <div id="pay_info" class="tab-pane fade">
+        <form method="post" action="" role="form">
+            <table class="table table-form table-bordered bottom-remove">
+              <tbody>
+                <tr class="text-center">
+                  <td colspan="2">Платёжная информация</td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Способ выплаты заработка</td>
+                  <td>
+                    <select name="payment_type" id="" class="form-control">
+                      <option value="0" selected="selected">Yandex Money</option>
+                      <option value="1">WebMoney</option>
+                      <option value="2">На банковскую карту</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Полное имя</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Адрес</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Город</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Индекс</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Страна</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Номер телефона</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                  <td class="text-right"><span class="fieldrequired">*</span> Номер счёта</td>
+                  <td><input type="text" class="form-control"></td>
+                </tr>
+                <tr  class="text-center">
+                  <td colspan="2">
+                    <input type="submit" class="btn btn-info" value="Изменить">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <p class="small text-center">
+        <span class="fieldrequired">*</span> - помечены поля обязательные для заполнения.
+      </p>
+    </div>
+  </div>
+{% endblock %}

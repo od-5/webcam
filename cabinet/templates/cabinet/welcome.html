@@ -27,6 +27,20 @@
       </h2>
     </div>
     <div class="col-lg-12">
+      {% if usertype == 1 %}
+        <table class="table-center">
+          <tbody>
+            <tr>
+              <td>Логин:&nbsp;&nbsp;</td>
+              <td>admin</td>
+            </tr>
+            <tr>
+              <td>Пароль:&nbsp;&nbsp;</td>
+              <td>admin</td>
+            </tr>
+          </tbody>
+        </table>
+      {% endif %}
       <div class="sign">
         <form action="" role="form" method="post" class="bottom-add">{% csrf_token %}
           <input type="hidden" name="usertype" value="{{ usertype|default:1 }}">

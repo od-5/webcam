@@ -1,0 +1,48 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Добавить нового вебмастера{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/webmasters/__includes/webmasters_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Добавить нового вебмастера</h2>
+    </div>
+    <div class="col-lg-12">
+      <form method="post" action="" role="form">
+        <table class="table table-form table-bordered bottom-remove">
+          <tbody>
+            <tr class="text-center">
+              <td colspan="2">Заполните форму регистрации.</td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> Логин</td>
+              <td><input type="text" class="form-control"></td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> Пароль</td>
+              <td><input type="text" class="form-control"></td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> Повторите пароль</td>
+              <td><input type="text" class="form-control"></td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> e-mail</td>
+              <td><input type="text" class="form-control"></td>
+            </tr>
+            <tr  class="text-center">
+              <td colspan="2">
+                <input type="submit" class="btn btn-success" value="Добавить">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <p class="small text-center">
+        <span class="fieldrequired">*</span> - помечены поля обязательные для заполнения.
+      </p>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+{% endblock %}

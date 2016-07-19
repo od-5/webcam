@@ -1,0 +1,111 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Управление вебмастерами{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/webmasters/__includes/webmasters_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Управление вебмастерами</h2>
+    </div>
+    <div class="col-lg-12">
+      <form method="get" action="" class="form-filter form-inline">
+        <table class="table table-filter table-bordered bottom-remove">
+          <tbody>
+            <tr class="table-filter__header">
+              <td>Логин</td>
+              <td>e-mail</td>
+              <td>e-mail подтверждён</td>
+              <td rowspan="4">
+                <button type="submit" class="btn btn-default">
+                  <span class="glyphicon glyphicon-search"></span> Найти
+                </button>
+                <br>
+                <br>
+                <a href="#" class="btn btn-info">
+                  <span class="glyphicon glyphicon-envelope"></span> Добавить в рассылку
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="nowrap">
+                <input type="text" name="webmaster_name" value="" class="form-control">
+              </td>
+              <td class="nowrap">
+                <input type="text" name="webmaster_email" value="" class="form-control">
+              </td>
+              <td class="nowrap">
+                <select name="webmaster_email_confirm" class="form-control">
+                  <option value="0">Любой</option>
+                  <option value="1">Только подтверждённые</option>
+                  <option value="2">Только не подтверждённые</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="table-filter__header">
+              <td colspan="2">Зарегистрирован</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="nowrap">
+                С <input type="date" name="report_date_from" value="" maxlength="10" class="form-control">
+              </td>
+              <td class="nowrap">
+                По <input type="date" name="report_date_to" value="" maxlength="10" class="form-control">
+              </td>
+              <td >
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <ul class="list-inline">
+            <li><a href="#">Сегодня</a></li>
+            <li><a href="#">Вчера</a></li>
+            <li><a href="#">За месяц - Июль</a></li>
+            <li><a href="#">Прошедший месяц - Июнь</a></li>
+            <li><a href="#">За год - 2016</a></li>
+            <li><a href="#">За все время</a></li>
+          </ul>
+        </div>
+      </form>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-lg-12">
+      <table class="table table-condensed table-bordered table-list">
+        <thead>
+          <tr>
+            <th><input type="checkbox" name="select_all"></th>
+            <th>id</th>
+            <th>Логин</th>
+            <th>e-mail</th>
+            <th>Дата регистрации</th>
+            <th>Действия</th>
+            <th>% выплат за клиентов</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in '111111' %}
+          <tr>
+            <td><input type="checkbox" name="select"></td>
+            <td>{{ forloop.counter }}</td>
+            <td><a href="{% url 'cabinet:administrator:webmaster_update' forloop.counter %}">Webmstar login</a></td>
+            <td>test@example.com <span class="label label-warning">Не подтверждён</span></td>
+            <td>14.07.2016</td>
+            <td><a href="#">Блокировать</a></td>
+            <td><input type="number" class="form-control" step="0.01"></td>
+          </tr>
+        {% endfor %}
+          <tr>
+          <td colspan="7">
+            <button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Удалить выбранных вебмастеров</button>
+            <button class="btn btn-info"><span class="glyphicon glyphicon-envelope"></span> Добавить в рассылку</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <p class="text-right small">
+        Всего найдено записей: <strong>6</strong>
+      </p>
+    </div>
+  </div>
+{% endblock %}

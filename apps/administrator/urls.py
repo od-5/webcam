@@ -27,4 +27,16 @@ urlpatterns = patterns(
     url(r'^chatlogs/$', login_required(TemplateView.as_view(template_name='administrator/customers/chatlogs.html')), name='chatlogs'),
     url(r'^chatlog/(?P<pk>\d+)$', login_required(TemplateView.as_view(template_name='administrator/customers/chatlog.html')), name='chatlog'),
     url(r'^badwords/$', login_required(TemplateView.as_view(template_name='administrator/customers/badwords.html')), name='badwords'),
+    # Webmasters url
+    url(r'^webmasters/$', login_required(TemplateView.as_view(template_name='administrator/webmasters/webmster_list.html')), name='webmaster_list'),
+    url(r'^webmaster/add/$', login_required(TemplateView.as_view(template_name='administrator/webmasters/webmsater_add.html')), name='webmaster_add'),
+    url(r'^webmaster/(?P<pk>\d+)/$', login_required(TemplateView.as_view(template_name='administrator/webmasters/webmstare_update.html')), name='webmaster_update'),
+    url(r'^webmasters/banners/$', login_required(TemplateView.as_view(template_name='administrator/webmasters/webmasterbanners.html')), name='webmaster_banners'),
+    # Site urls
+    url(r'^events/$', login_required(TemplateView.as_view(template_name='administrator/site/event_list.html')), name='event_list'),
+    url(r'^event/add/$', login_required(TemplateView.as_view(template_name='administrator/site/event_add.html')), name='event_add'),
+    url(r'^sections/$', login_required(TemplateView.as_view(template_name='administrator/site/section_list.html')), name='section_list'),
+    url(r'^section/(?P<pk>\d+)/$', login_required(TemplateView.as_view(template_name='administrator/site/material_list.html')), name='material_list'),
+    url(r'^material/add/$', login_required(TemplateView.as_view(template_name='administrator/site/material_add.html')), name='material_add'),
+    url(r'^material/(?P<pk>\d+)/$', login_required(TemplateView.as_view(template_name='administrator/site/material_update.html')), name='material_update'),
 )

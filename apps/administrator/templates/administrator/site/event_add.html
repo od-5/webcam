@@ -1,0 +1,62 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Добавить новое мероприятие{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/site/__includes/site_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Добавить новое мероприятие</h2>
+    </div>
+    <div class="col-lg-12">
+      <form method="post" action="" class="form-inline" role="form">
+        <table class="table table-form table-bordered bottom-remove">
+          <tbody>
+            <tr class="text-center">
+              <td colspan="2">Заполните форму мероприятия.</td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> Название</td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Описание</td>
+              <td>
+                <textarea style="min-width: 600px;" class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> Время начала</td>
+              <td>
+                <input type="date" class="form-control">
+                <input type="time" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> Время окончаня</td>
+              <td>
+                <input type="date" class="form-control">
+                <input type="time" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td>Афиша</td>
+              <td><input type="file" class="form-control"></td>
+            </tr>
+            <tr  class="text-center">
+              <td colspan="2">
+                <input type="submit" class="btn btn-success" value="Добавить">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <p class="small text-center">
+        <span class="fieldrequired">*</span> - помечены поля обязательные для заполнения.
+      </p>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+{% endblock %}

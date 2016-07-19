@@ -1,0 +1,40 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Материалы раздела "О клубе"{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/site/__includes/site_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Материалы раздела "О клубе"</h2>
+    </div>
+    <div class="col-lg-12">
+      <table class="table table-condensed table-bordered table-list">
+        <thead>
+          <tr>
+            <th><input type="checkbox" name="select_all"></th>
+            <th>Название</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in '111111' %}
+          <tr>
+            <td><input type="checkbox" name="select"></td>
+            <td><a href="{% url 'cabinet:administrator:material_update' forloop.counter %}">Lorem ipsum dolor sit amet, consectetur adipisicing.</a></td>
+          </tr>
+        {% endfor %}
+          <tr>
+          <td colspan="4">
+            <button class="btn btn-danger">
+              <span class="glyphicon glyphicon-remove"></span> Удалить выбранные материалы
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <p class="text-right small">
+        Всего найдено записей: <strong>6</strong>
+      </p>
+    </div>
+  </div>
+{% endblock %}

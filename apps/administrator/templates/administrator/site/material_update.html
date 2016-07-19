@@ -1,0 +1,49 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Редактирование материала{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/site/__includes/site_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Редактирование материала</h2>
+    </div>
+    <div class="col-lg-12">
+      <form method="post" action="" class="form-inline" role="form">
+        <table class="table table-form table-bordered bottom-remove">
+          <tbody>
+            <tr class="text-center">
+              <td colspan="2">Форма редактирования материала</td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> Название</td>
+              <td>
+                <input type="text" class="form-control" value="Lorem ipsum dolor sit.">
+              </td>
+            </tr>
+            <tr>
+              <td><span class="fieldrequired">*</span> Описание</td>
+              <td>
+                <textarea style="min-width: 600px; height: 300px;" class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid assumenda atque blanditiis commodi deserunt dignissimos eos iste libero magnam quam recusandae, reiciendis totam. Blanditiis id laboriosam nemo. Aut corporis debitis deleniti id maiores similique voluptas! A molestiae natus nemo!
+                </textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>Обложка</td>
+              <td><input type="file" class="form-control"></td>
+            </tr>
+            <tr  class="text-center">
+              <td colspan="2">
+                <input type="submit" class="btn btn-success" value="Добавить">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <p class="small text-center">
+        <span class="fieldrequired">*</span> - помечены поля обязательные для заполнения.
+      </p>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+{% endblock %}
