@@ -39,4 +39,11 @@ urlpatterns = patterns(
     url(r'^section/(?P<pk>\d+)/$', login_required(TemplateView.as_view(template_name='administrator/site/material_list.html')), name='material_list'),
     url(r'^material/add/$', login_required(TemplateView.as_view(template_name='administrator/site/material_add.html')), name='material_add'),
     url(r'^material/(?P<pk>\d+)/$', login_required(TemplateView.as_view(template_name='administrator/site/material_update.html')), name='material_update'),
+    # Config urls
+    url(r'^systemconfig/$', login_required(TemplateView.as_view(template_name='administrator/config/systemconfig.html')), name='systemconfig'),
+    url(r'^workers/$', login_required(TemplateView.as_view(template_name='administrator/config/worker_list.html')), name='worker_list'),
+    url(r'^archive/$', login_required(TemplateView.as_view(template_name='administrator/config/archive_list.html')), name='archive_list'),
+    url(r'^paymentpackages/$', login_required(TemplateView.as_view(template_name='administrator/config/paymentpackages_list.html')), name='paymentpackages_list'),
+    url(r'^newsletters/$', login_required(TemplateView.as_view(template_name='administrator/config/newsletter_list.html')), name='newsletter_list'),
+    url(r'^paymentcoupons/$', login_required(TemplateView.as_view(template_name='administrator/config/paymentcoupon_list.html')), name='paymentcoupon_list'),
 )

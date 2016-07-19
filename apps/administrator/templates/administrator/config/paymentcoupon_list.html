@@ -1,0 +1,134 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Оплата купонов{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/config/__includes/config_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Оплата купонов</h2>
+    </div>
+    <div class="col-lg-12">
+      <form method="get" action="" class="form-filter form-inline">
+        <table class="table table-filter table-bordered bottom-remove">
+          <tbody>
+            <tr class="table-filter__header">
+              <td>Код</td>
+              <td colspan="2">Истекает</td>
+              <td rowspan="2">
+                <button type="submit" class="btn btn-default">
+                  <span class="glyphicon glyphicon-search"></span> Найти
+                </button>
+                <br>
+                <br>
+                <a href="#" class="btn btn-success">
+                  <span class="glyphicon glyphicon-download-alt"></span> Эскпорт в Excel
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td class="nowrap">
+                С <input type="date" name="report_date_from" value="" maxlength="10" class="form-control">
+              </td>
+              <td class="nowrap">
+                По <input type="date" name="report_date_to" value="" maxlength="10" class="form-control">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <ul class="list-inline">
+            <li><a href="#">Сегодня</a></li>
+            <li><a href="#">Вчера</a></li>
+            <li><a href="#">За месяц - Июль</a></li>
+            <li><a href="#">Прошедший месяц - Июнь</a></li>
+            <li><a href="#">За год - 2016</a></li>
+            <li><a href="#">За все время</a></li>
+          </ul>
+        </div>
+      </form>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="col-lg-12">
+      <table class="table table-condensed table-bordered table-list">
+        <thead>
+          <tr>
+            <th><input type="checkbox" name="select_all"></th>
+            <th>id</th>
+            <th>Код</th>
+            <th>Сумма, %</th>
+            <th>Истекает</th>
+            <th>Уже использован</th>
+            <th>Может быть использован</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in '111111' %}
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>{{ forloop.counter }}</td>
+            <td><input type="text" value="123HJG812" class="form-control"></td>
+            <td><input type="number" value="25" class="form-control"></td>
+            <td>20.08.2016</td>
+            <td>12</td>
+            <td>19</td>
+          </tr>
+        {% endfor %}
+          <tr>
+          <td colspan="7">
+            <button class="btn btn-danger">
+              <span class="glyphicon glyphicon-remove"></span> Удалить выбранных сотрудников
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <p class="text-right small">
+        Всего найдено записей: <strong>6</strong>
+      </p>
+    </div>
+    <div class="col-lg-8 col-lg-2">
+      <h2>Добавить купоны оплаты</h2>
+      <form action="" role="form" method="post">{% csrf_token %}
+        <table class="table table-form table-bordered bottom-remove">
+          <tbody>
+            <tr>
+              <td colspan="2">
+                Заполните следующую форму
+              </td>
+            </tr>
+            <tr>
+              <td class="text-right">
+                Код:
+              </td>
+              <td><input type="number" class="form-control"></td>
+            </tr>
+            <tr>
+              <td class="text-right">
+                Срок действия:
+              </td>
+              <td><input type="date" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Сумма: %</td>
+              <td><input type="number" class="form-control"></td>
+            </tr>
+            <tr>
+              <td>Может быть использован раз: %</td>
+              <td>
+                <input type="number" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center">
+                <button class="btn btn-success">Добавить</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,12 +1,12 @@
 {% extends 'administrator/administrator_dashboard.html' %}
-{% block title %}Список мероприятий{% endblock %}
+{% block title %}Архив видео{% endblock %}
 {% block header_submenu %}
-  {% include 'administrator/site/__includes/site_menu.html' %}
+  {% include 'administrator/config/__includes/config_menu.html' %}
 {% endblock %}
 {% block main %}
   <div class="row">
     <div class="col-lg-12">
-      <h2 class="text-center bottom-add">Список мероприятий</h2>
+      <h2 class="text-center bottom-add">Архив видео</h2>
     </div>
     <div class="col-lg-12">
       <form method="get" action="" class="form-filter form-inline">
@@ -41,31 +41,32 @@
           </ul>
         </div>
       </form>
-      <div class="clearfix"></div>
     </div>
     <div class="col-lg-12">
       <table class="table table-condensed table-bordered table-list">
         <thead>
           <tr>
             <th><input type="checkbox" name="select_all"></th>
-            <th>Название</th>
-            <th>Начало</th>
-            <th>Окончание</th>
+            <th>Дата записи</th>
+            <th>Ссылка на видео</th>
           </tr>
         </thead>
         <tbody>
         {% for i in '111111' %}
           <tr>
             <td><input type="checkbox" name="select"></td>
-            <td><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing.</a></td>
-            <td>14.07.2016 - 23:00</td>
-            <td>15.07.2016 - 03:00</td>
+            <td><input type="date" value="12.06.2016" class="form-control"></td>
+            <td>
+              <a href="#" class="btn btn-default">
+                <span class="glyphicon glyphicon-download-alt"></span> Скачать
+              </a>
+            </td>
           </tr>
         {% endfor %}
           <tr>
-          <td colspan="4">
+          <td colspan="6">
             <button class="btn btn-danger">
-              <span class="glyphicon glyphicon-remove"></span> Удалить выбранные мероприятия
+              <span class="glyphicon glyphicon-remove"></span> Удалить выбранные видео
             </button>
           </td>
         </tr>

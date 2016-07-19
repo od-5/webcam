@@ -1,0 +1,91 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Платёжные пакеты{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/config/__includes/config_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Платёжные пакеты</h2>
+    </div>
+    <div class="col-lg-12">
+      <table class="table table-condensed table-bordered table-list">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Название</th>
+            <th>Описание</th>
+            <th>Срок действия</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td><input type="text" value="" class="form-control"></td>
+            <td><input type="text" value="" class="form-control"></td>
+            <td>
+              <select name="" id="" class="form-control">
+                <option value="1">1 месяц</option>
+                <option value="2">2 месяца</option>
+                <option value="3">3 месяца</option>
+                <option value="4">4 месяца</option>
+                <option value="5">5 месяцев</option>
+                <option value="6">6 месяцев</option>
+                <option value="7">7 месяцев</option>
+                <option value="8">8 месяцев</option>
+                <option value="9">9 месяцев</option>
+                <option value="10">10 месяцев</option>
+                <option value="11">11 месяцев</option>
+                <option value="12">12 месяцев</option>
+              </select>
+            </td>
+            <td>
+              <button class="btn btn-success">Добавить</button>
+            </td>
+          </tr>
+        {% for i in '111111' %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td><input type="text" value="lorem ipsum" class="form-control"></td>
+            <td><input type="text" value="lorem ipsum dolor set amen" class="form-control"></td>
+            <td class="text-right">
+              <select name="" id="" class="form-control">
+                <option value="1">1 месяц</option>
+                <option value="2" selected="selected">2 месяца</option>
+                <option value="3">3 месяца</option>
+                <option value="4">4 месяца</option>
+                <option value="5">5 месяцев</option>
+                <option value="6">6 месяцев</option>
+                <option value="7">7 месяцев</option>
+                <option value="8">8 месяцев</option>
+                <option value="9">9 месяцев</option>
+                <option value="10">10 месяцев</option>
+                <option value="11">11 месяцев</option>
+                <option value="12">12 месяцев</option>
+              </select>
+            </td>
+            <td>
+              <button class="btn btn-info">Изменить</button>
+              <button class="btn btn-default">Выключить</button>
+              <button class="btn btn-default" disabled="disabled">Включить</button>
+            </td>
+          </tr>
+        {% endfor %}
+          <tr>
+          <td colspan="6">
+            <button class="btn btn-danger">
+              <span class="glyphicon glyphicon-remove"></span> Удалить выбранных сотрудников
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <p class="text-right small">
+        Всего найдено записей: <strong>6</strong>
+      </p>
+    </div>
+
+
+  </div>
+{% endblock %}
