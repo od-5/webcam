@@ -1,6 +1,5 @@
 # coding=utf-8
 from django.conf.urls import patterns, url, include
-from django.contrib.auth.views import logout
 from django.views.generic import TemplateView
 from .views import WelcomeView
 
@@ -14,4 +13,6 @@ urlpatterns = patterns(
     url(r'^confidentiality/$', TemplateView.as_view(template_name='cabinet/confidentiality.html'), name='confidentiality'),
 
     url(r'^administrator/', include('apps.administrator.urls', namespace='administrator'),),
+    url(r'^webmaster/', include('apps.webmaster.urls', namespace='webmaster'),),
+    url(r'^seo/', include('apps.seo.urls', namespace='seo'),),
 )

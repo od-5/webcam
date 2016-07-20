@@ -48,6 +48,10 @@ def cabinet_sign(request):
                     login(request, user)
                     if user.type == 1:
                         return HttpResponseRedirect(reverse('cabinet:administrator:dashboard'))
+                    elif user.type == 2:
+                        return HttpResponseRedirect(reverse('cabinet:webmaster:dashboard'))
+                    elif user.type == 3:
+                        return HttpResponseRedirect(reverse('cabinet:seo:dashboard'))
                 else:
                     error = u'Пользователь заблокирован'
             else:

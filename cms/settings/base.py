@@ -29,7 +29,7 @@ ROOT_URLCONF = 'cms.urls'
 WSGI_APPLICATION = 'cms.wsgi.application'
 
 AUTH_USER_MODEL = 'core.User'
-LOGIN_URL = '/sign/'
+LOGIN_URL = '/cabinet/'
 
 LANGUAGE_CODE = 'ru-ru'
 

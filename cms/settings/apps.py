@@ -18,5 +18,7 @@ INSTALLED_APPS = (
     'landing',
     'apps.sign',
     'apps.administrator',
+    'apps.webmaster',
+    'apps.seo',
     'django_cleanup',
 )

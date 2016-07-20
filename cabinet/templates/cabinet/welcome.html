@@ -2,10 +2,12 @@
 {% block title %}Выберите типа пользователя для входа{% endblock %}
 {% block header %}
   <header class="header">
-    <div class="container-fluid">
+    <div class="container">
       <div>
         <h1 class="bottom-add">Большой красивый логотип</h1>
       </div>
+
+      <div class="clearfix"></div>
       <nav class="navbar navbar-default">
         <div class="container-fluid">
           {% include 'cabinet/__includes/welcome_menu.html' with class="nav navbar-nav" %}
@@ -37,6 +39,32 @@
             <tr>
               <td>Пароль:&nbsp;&nbsp;</td>
               <td>admin</td>
+            </tr>
+          </tbody>
+        </table>
+      {% elif usertype == 2 %}
+        <table class="table-center">
+          <tbody>
+            <tr>
+              <td>Логин:&nbsp;&nbsp;</td>
+              <td>webmaster</td>
+            </tr>
+            <tr>
+              <td>Пароль:&nbsp;&nbsp;</td>
+              <td>webmaster</td>
+            </tr>
+          </tbody>
+        </table>
+      {% elif usertype == 3 %}
+        <table class="table-center">
+          <tbody>
+            <tr>
+              <td>Логин:&nbsp;&nbsp;</td>
+              <td>testing</td>
+            </tr>
+            <tr>
+              <td>Пароль:&nbsp;&nbsp;</td>
+              <td>testing</td>
             </tr>
           </tbody>
         </table>

@@ -1,0 +1,39 @@
+{% extends 'cabinet/cabinet_base.html' %}
+{% load staticfiles %}
+{% block title %}Рабочий стол вебмастера{% endblock %}
+{% block header %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <h1 class="bottom-add">Большой красивый логотип</h1>
+      </div>
+      <div class="col-lg-5 text-right">
+        <a href="{% url 'cabinet:webmaster:profile' %}" class="login"><span class="glyphicon glyphicon-user"></span> Вы вошли как: {{ user }}</a>
+        <br>
+        <a href="{% url 'logout' %}?next={% url 'cabinet:welcome' %}" class="logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <nav class="navbar navbar-default bottom-remove">
+      <div class="container-fluid">
+        {% include 'webmaster/__includes/webmaster_menu.html' with class="nav navbar-nav" %}
+      </div>
+    </nav>
+  </div>
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Статистика</h2>
+    </div>
+    <div class="col-lg-12">
+      <div class="clearfix"></div>
+    </div>
+  </div>
+{% endblock %}
+{% block footer %}
+  <div>
+  {% include 'webmaster/__includes/webmaster_menu.html' %}
+  <div class="clearfix"></div>
+  </div>
+{% endblock %}

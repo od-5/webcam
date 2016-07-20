@@ -1,0 +1,32 @@
+{% extends 'webmaster/webmaster_dashboard.html' %}
+{% block title %}Баннеры{% endblock %}
+{% block main %}
+  {% load staticfiles %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Баннеры</h2>
+    </div>
+    <div class="col-lg-12">
+      <p>
+        На этой странице Вы можете загрузжать свои баннеры и использовать полученный код для привлечения клиентов на ваш домен.
+      </p>
+      <div class="banner">
+        <img src="{% static 'img/banner_example.jpg' %}" alt="">
+        <br>
+        <p class="small">
+          Вставляйте этот htm-код на свои сайты:
+        </p>
+        <textarea name="" id="" style="width: 470px;" class="form-control"><a href="http://eu.online-webcam.net"><img src="http://eu.online-webcam.net/templates/galleries/managers/1/webmaster_banner_1/4563.jpg" width="300" height="250" alt=""></a></textarea>
+        <a href="#">Удалить</a>
+        <hr>
+      </div>
+      <div class="banner">
+        <h2>Загрузка нового баннера</h2>
+        <input type="file" class="form-control" style="max-width: 600px;">
+        <br><br>
+        <button class="btn btn-info">Загрузить баннер</button>
+        <hr>
+      </div>
+    </div>
+  </div>
+{% endblock %}

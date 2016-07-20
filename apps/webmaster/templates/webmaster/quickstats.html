@@ -1,0 +1,106 @@
+{% extends 'webmaster/webmaster_dashboard.html' %}
+{% block title %}Обзорная статистика{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Обзорная статистика</h2>
+    </div>
+    <div class="col-lg-12">
+      <form method="get" action="" class="form-filter">
+        <table class="table table-filter table-bordered bottom-remove">
+          <tbody>
+            <tr class="table-filter__header">
+              <td>Дата С</td>
+              <td>Дата По</td>
+              <td>Период</td>
+              <td rowspan="2">
+                <button type="submit" class="btn btn-default">
+                  <span class="glyphicon glyphicon-search"></span> Найти
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="nowrap">
+                <input type="text" name="report_time_from" value="" maxlength="10" class="form-control">
+              </td>
+              <td class="nowrap">
+                <input type="text" name="report_time_to" value="" maxlength="10" class="form-control">
+              </td>
+              <td>
+                <select name="report_date_group" class="form-control">
+                  <option value="1">Ежемесячно</option>
+                  <option value="2">Полмесяца</option>
+                  <option value="3">2 недели</option>
+                  <option value="4">Еженедельно</option>
+                  <option value="5">Ежедневно</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <ul class="list-inline">
+            <li><a href="#">Сегодня</a></li>
+            <li><a href="#">Вчера</a></li>
+            <li><a href="#">За месяц - Июль</a></li>
+            <li><a href="#">Прошедший месяц - Июнь</a></li>
+            <li><a href="#">За год - 2016</a></li>
+            <li><a href="#">За все время</a></li>
+          </ul>
+        </div>
+      </form>
+      <div class="clearfix"></div>
+    </div>
+    <div class="col-lg-12">
+      <table class="table table-condensed table-bordered table-list">
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Заработано</th>
+            <th>Выплачено</th>
+            <th>Количество регистраций</th>
+            <th>Посетители</th>
+            <th>Количество посетителей</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Июнь 2016</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Июль 2016</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Август 2016</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="total">
+            <td>Итого</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-right small">
+        Всего найдено записей: <strong>3</strong>
+      </p>
+    </div>
+  </div>
+{% endblock %}
