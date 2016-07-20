@@ -46,4 +46,11 @@ urlpatterns = patterns(
     url(r'^paymentpackages/$', login_required(TemplateView.as_view(template_name='administrator/config/paymentpackages_list.html')), name='paymentpackages_list'),
     url(r'^newsletters/$', login_required(TemplateView.as_view(template_name='administrator/config/newsletter_list.html')), name='newsletter_list'),
     url(r'^paymentcoupons/$', login_required(TemplateView.as_view(template_name='administrator/config/paymentcoupon_list.html')), name='paymentcoupon_list'),
+    url(r'^cameras/$', login_required(TemplateView.as_view(template_name='administrator/config/camera_list.html')), name='camera_list'),
+    url(r'^camera/add/$', login_required(TemplateView.as_view(template_name='administrator/config/camera_add.html')), name='camera_add'),
+    url(r'^camera/(?P<pk>\d+)/$', login_required(TemplateView.as_view(template_name='administrator/config/camera_update.html')), name='camera_update'),
+    url(r'^profile/$', login_required(TemplateView.as_view(template_name='administrator/config/profile.html')), name='profile'),
+    url(r'^pages/$', login_required(TemplateView.as_view(template_name='administrator/config/page_list.html')), name='page_list'),
+    url(r'^pages/add/$', login_required(TemplateView.as_view(template_name='administrator/config/page_add.html')), name='page_add'),
+    url(r'^pages/(?P<pk>\d+)/$', login_required(TemplateView.as_view(template_name='administrator/config/page_update.html')), name='page_update'),
 )

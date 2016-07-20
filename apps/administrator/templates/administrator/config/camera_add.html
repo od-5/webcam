@@ -1,0 +1,68 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Добавить новую камеру{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/config/__includes/config_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Добавить новую камеру</h2>
+    </div>
+    <div class="col-lg-12">
+      <form method="post" action="" role="form">
+        <table class="table table-form table-bordered bottom-remove">
+          <tbody>
+            <tr class="text-center">
+              <td colspan="2">Настройки камеры</td>
+            </tr>
+            <tr>
+              <td class="text-right">
+                <span class="fieldrequired">*</span> Расположение:
+              </td>
+              <td>
+                <select name="" id="" class="form-control">
+                  <option value="1">Главная сцена</option>
+                  <option value="2">Гримёрка</option>
+                  <option value="3">Душевая</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-right">
+                Номер камеры
+              </td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr>
+              <td class="text-right">
+                Тип камеры(ракурс):
+              </td>
+              <td>
+                <input type="text" class="form-control">
+              </td>
+            </tr>
+            <tr class="text-center">
+              <td class="text-right">
+                <span class="fieldrequired">*</span> Скрипт камеры
+              </td>
+              <td>
+                <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+              </td>
+            </tr>
+            <tr  class="text-center">
+              <td colspan="2">
+                <input type="submit" class="btn btn-info" value="Изменить">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <p class="small text-center">
+        <span class="fieldrequired">*</span> - помечены поля обязательные для заполнения.
+      </p>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+{% endblock %}

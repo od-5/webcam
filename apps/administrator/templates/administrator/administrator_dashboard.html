@@ -185,6 +185,13 @@
               <tbody>
                 <tr>
                   <td>
+                    <a href="{% url 'cabinet:administrator:systemconfig' %}">
+                      <img src="{% static 'administrator/icons/system_config.png' %}" alt="">
+                      <br>
+                      Настройки
+                    </a>
+                  </td>
+                  <td>
                     <a href="{% url 'cabinet:administrator:worker_list' %}">
                       <img src="{% static 'administrator/icons/webmasters.png' %}" alt=""><br>
                       Управление сотрудниками
@@ -219,28 +226,21 @@
                     </a>
                   </td>
                   <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:camera_list' %}">
                       <img src="{% static 'administrator/icons/camera.png' %}" alt="">
                       <br>
                       Камеры
                     </a>
                   </td>
                   <td>
-                    <a href="{% url 'cabinet:administrator:systemconfig' %}">
-                      <img src="{% static 'administrator/icons/system_config.png' %}" alt="">
-                      <br>
-                      Настройки
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:page_list' %}">
                       <img src="{% static 'administrator/icons/seo.png' %}" alt="">
                       <br>
                       СЕО
                     </a>
                   </td>
                   <td>
-                    <a href="{% url 'cabinet:administrator:dashboard' %}">
+                    <a href="{% url 'cabinet:administrator:profile' %}">
                       <img src="{% static 'administrator/icons/profile.png' %}" alt="">
                       <br>
                       Профиль

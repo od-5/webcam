@@ -1,0 +1,70 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Управление камерами{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/config/__includes/config_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Управление камерами</h2>
+    </div>
+    <div class="col-lg-12">
+      <table class="table table-condensed table-bordered table-list">
+        <thead>
+        <tr>
+          <th><input type="checkbox"></th>
+          <th>Расположение</th>
+          <th>Номер камеры</th>
+          <th>Тип камеры (ракурс)</th>
+          <th>Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>Главная сцена</td>
+            <td>
+              <a href="{% url 'cabinet:administrator:camera_update' 1 %}">Камера 1</a>
+            </td>
+            <td>Основная камера</td>
+            <td class="text-right">
+              <button class="btn btn-default" disabled="disabled">Включить</button>
+              <button class="btn btn-default">Выключить</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>Главная сцена</td>
+            <td>
+              <a href="{% url 'cabinet:administrator:camera_update' 2 %}">Камера 2</a>
+            </td>
+            <td>Справа</td>
+            <td class="text-right">
+              <button class="btn btn-default" disabled="disabled">Включить</button>
+              <button class="btn btn-default">Выключить</button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td>Гримёрка</td>
+            <td>
+              <a href="{% url 'cabinet:administrator:camera_update' 3 %}">Камера 3</a>
+            </td>
+            <td>Основная камера</td>
+            <td class="text-right">
+              <button class="btn btn-default">Включить</button>
+              <button class="btn btn-default" disabled="disabled">Выключить</button>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="5">
+              <button class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove"></span> Удалить выбранные камеры
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}

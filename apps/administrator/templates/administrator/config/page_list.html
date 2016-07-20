@@ -1,0 +1,44 @@
+{% extends 'administrator/administrator_dashboard.html' %}
+{% block title %}Список страниц{% endblock %}
+{% block header_submenu %}
+  {% include 'administrator/config/__includes/config_menu.html' %}
+{% endblock %}
+{% block main %}
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="text-center bottom-add">Список страниц</h2>
+    </div>
+    <div class="col-lg-12">
+      <table class="table table-condensed table-bordered table-list">
+        <thead>
+        <tr>
+          <th><input type="checkbox"></th>
+          <th>Название страницы</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="{% url 'cabinet:administrator:page_update' 1 %}">Главная</a></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="{% url 'cabinet:administrator:page_update' 2 %}">Душевая</a></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><a href="{% url 'cabinet:administrator:page_update' 3 %}">О клубе</a></td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <button class="btn btn-danger">
+                <span class="glyphicon glyphicon-remove"></span> Удалить выбранные настройки
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock %}
