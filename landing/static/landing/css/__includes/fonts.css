@@ -1,0 +1,29 @@
+@font-face {
+  font-family: Pragmatica;
+  src: url("../fonts/pragmaticac.otf") format("opentype");
+}
+@font-face {
+  font-family: Pragmatica;
+  src: url("../fonts/pragmaticac-bold.otf") format("opentype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Pragmatica;
+  src: url("../fonts/pragmaticac-bolditalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: Pragmatica;
+  src: url("../fonts/pragmaticac-italic.otf") format("opentype");
+  font-style: italic;
+}
+@font-face {
+  font-family: PragmaticaLight;
+  src: url("../fonts/pragmaticalightc.otf") format("opentype");
+}
+@font-face {
+  font-family: PragmaticaLight;
+  src: url("../fonts/pragmaticalightc.otf") format("opentype");
+  font-weight: bold;
+}

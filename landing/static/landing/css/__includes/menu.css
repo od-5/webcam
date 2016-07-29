@@ -1,0 +1,11 @@
+.menu-list {
+  list-style: none;
+}
+.menu-list__item {
+  display: inline;
+}
+.menu__link {
+  font-family: PragmaticaLight;
+  font-size: 16px;
+  color: #fff;
+}

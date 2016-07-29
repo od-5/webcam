@@ -1,0 +1,109 @@
+.pink {
+  color: #ed1b5d;
+}
+.inline-block {
+  display: inline-block;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.hidden {
+  opacity:0;
+}
+.visible {
+  opacity:1;
+}
+.text {
+  &-center {
+    text-align: center;
+  }
+  &-left {
+    text-align: left;
+  }
+  &-right {
+    text-align: right;
+  }
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.5); /*dim the background*/
+}
+.button {
+  display: block;
+  font-family: 'Pragmatica';
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 2px;
+  border: none;
+  color: #fff;
+  padding: 18px 0;
+  width: 256px;
+  margin: 20px 0;
+  text-align: center;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ee145b+0,f26d7c+96 */
+  background: rgb(238,20,91); /* Old browsers */
+  background: -moz-linear-gradient(left,  rgba(238,20,91,1) 0%, rgba(242,109,124,1) 96%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  rgba(238,20,91,1) 0%,rgba(242,109,124,1) 96%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  rgba(238,20,91,1) 0%,rgba(242,109,124,1) 96%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee145b', endColorstr='#f26d7c',GradientType=1 ); /* IE6-9 */
+  &:hover {
+    opacity: .9;
+  }
+}
+.form {
+  text-align: center;
+  &__input {
+    font-family: 'PragmaticaLight';
+    font-size: 16px;
+    border-radius: 2px;
+    border: none;
+    background: #fff;
+    padding: 18px 0;
+    margin: 0 6px;
+    width: 256px;
+    text-align: center
+  }
+  &__button {
+    background: #1482cb;
+    color: #fff;
+    &:hover {
+      opacity: .9;
+    }
+  }
+}
+.warning {
+  width: 330px;
+  margin: 0 auto;
+  padding-bottom: 52px;
+  &-icon {
+    width: 48px;
+    height: 48px;
+    -webkit-border-radius: 48px;
+    -moz-border-radius: 48px;
+    border-radius: 48px;
+    border: 2px solid #889fae;
+    color: #889fae;
+    display: inline-block;
+    text-align: center;
+    line-height: 48px;
+    vertical-align: top;
+  }
+  &-content {
+    display: inline-block;
+    color: #889fae;
+    font-size: 14px;
+    line-height: 18px;
+    height: 48px;
+    width: 259px;
+    margin: 9px 0;
+    padding-left: 13px;
+  }
+}
