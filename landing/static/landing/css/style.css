@@ -3939,3 +3939,199 @@ body {
   line-height: 1.2;
   margin-bottom: 34px;
 }
+.section-third {
+  padding-top: 113px;
+  padding-bottom: 139px;
+}
+.section-third .section__title {
+  letter-spacing: 1.2px;
+  line-height: 1.2em;
+  margin-bottom: 37px;
+}
+.section-third-content {
+  text-align: center;
+  margin-bottom: 83px;
+}
+.section-third-content-item {
+  text-align: center;
+  width: 280px;
+  display: inline-block;
+  margin: 0 15px;
+  vertical-align: top;
+}
+.section-third-content-item__image {
+  height: 297px;
+  line-height: 297px;
+}
+.section-third-content-item__image img {
+  vertical-align: bottom;
+}
+.section-third-content-item__text {
+  font-size: 24px;
+  padding-top: 40px;
+  width: 200px;
+  margin: 0 auto;
+}
+.section-third-content__text {
+  font-size: 24px;
+  font-family: 'Pragmatica';
+  margin: 0 auto;
+  position: relative;
+  width: 838px;
+}
+.section-third-content__text:before {
+  content: '';
+  display: block;
+  width: 315px;
+  height: 87px;
+  position: absolute;
+  top: 0;
+  left: -55px;
+  background: url('../img/section-third__line-left.png');
+  background-repeat: no-repeat;
+}
+.section-third-content__text:after {
+  content: '';
+  display: block;
+  width: 315px;
+  height: 87px;
+  position: absolute;
+  top: 0;
+  right: -82px;
+  background: url('../img/section-third__line-right.png');
+  background-repeat: no-repeat;
+}
+.section-third-content__text p {
+  margin: 30px 0;
+  letter-spacing: .8px;
+}
+.section-four {
+  background-color: #333;
+  background: url('../img/section-four__bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  padding-bottom: 116px;
+}
+.section-four .section__title {
+  margin-top: 161px;
+  margin-bottom: 60px;
+}
+.section-four-content {
+  list-style: none;
+  margin-left: 0;
+}
+.section-four-content-item {
+  display: inline-block;
+  margin-bottom: 50px;
+}
+.section-four-content-item__number {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-right: -15px;
+  margin-top: -15px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background-color: #ef2a63;
+  color: #fff;
+}
+.section-four-content-item__icon {
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  border: 1px solid #ef2a63;
+  -webkit-border-radius: 120px;
+  -moz-border-radius: 120px;
+  border-radius: 120px;
+  display: inline-block;
+  margin-right: 30px;
+  position: relative;
+}
+.section-four-content-item__icon_first img {
+  margin-left: -7px;
+  margin-top: -14px;
+}
+.section-four-content-item__icon img {
+  vertical-align: middle;
+}
+.section-four-content-item__text {
+  display: inline-block;
+  width: 320px;
+  font-family: 'PragmaticaLight';
+  font-size: 18px;
+  color: #fff;
+  vertical-align: middle;
+}
+.section-five {
+  padding-top: 114px;
+  padding-bottom: 25px;
+  background: url('../img/section-five__bg.png') no-repeat;
+  background-position: 50% 340px;
+}
+.section-five-content {
+  text-align: center;
+  margin-top: 42px;
+}
+.section-five-content-item {
+  display: inline-block;
+  width: 310px;
+  vertical-align: top;
+  margin-bottom: 118px;
+}
+.section-five-content-item:last-child {
+  width: 330px;
+}
+.section-five-content-item__icon {
+  width: 126px;
+  height: 126px;
+  margin: 0 auto 30px;
+  line-height: 126px;
+  -webkit-border-radius: 126px;
+  -moz-border-radius: 126px;
+  border-radius: 126px;
+  background-color: #ef3668;
+}
+.section-five-content-item__icon img {
+  vertical-align: middle;
+}
+.section-five-content-item__text {
+  font-family: 'PragmaticaLight';
+  font-size: 16px;
+  line-height: 1.2em;
+}
+.section-six {
+  background: url('../img/section-six__bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  padding-top: 114px;
+  padding-bottom: 156px;
+  color: #fff;
+}
+.section-six__text {
+  font-family: 'PragmaticaLight';
+  font-size: 18px;
+  margin: 12px 0 46px;
+  width: 840px;
+}
+.section-six-content {
+  list-style: none;
+  width: 790px;
+}
+.section-six-content__item {
+  font-family: 'PragmaticaLight';
+  font-size: 18px;
+  padding-left: 68px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  background: url('../icon/section-six__icon.png') no-repeat;
+  background-position: 0 50%;
+}
