@@ -8,19 +8,7 @@
         </a>
       </div>
       <div class="grid_6 text-right">
-        <nav class="menu">
-          <ul class="menu-list">
-            <li class="menu-list__item">
-              <a href="{% url 'landing:index' %}" class="menu__link">Главная</a>
-            </li>
-            <li class="menu-list__item">
-              <a href="#" class="menu__link">Наши примеры</a>
-            </li>
-            <li class="menu-list__item">
-              <a href="{% url 'cabinet:welcome' %}" class="menu__link">Демо-Вход</a>
-            </li>
-          </ul>
-        </nav>
+        {% include 'landing/__includes/nav.html' %}
       </div>
       <div class="clearfix"></div>
     </div>
@@ -48,11 +36,12 @@
         </p>
       </div>
       <div class="grid_12">
-        <form action="" class="form">
-          <input type="text" name="name" class="form__input" placeholder="Как вас зовут?">
-          <input type="text" name="phone" class="form__input" placeholder="Введите ваш телефон">
-          <input type="submit" class="form__input form__button" value="Заказать консультацию">
-        </form>
+        {% include 'landing/__includes/ticket-form.html' %}
+{#        <form action="" class="form">#}
+{#          <input type="text" name="name" class="form__input" placeholder="Как вас зовут?">#}
+{#          <input type="text" name="phone" class="form__input" placeholder="Введите ваш телефон">#}
+{#          <input type="submit" class="form__input form__button" value="Заказать консультацию">#}
+{#        </form>#}
       </div>
       <div class="grid_12">
         <div class="warning">
