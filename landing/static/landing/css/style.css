@@ -4010,6 +4010,7 @@ body {
 .section-third-content__text p {
   margin: 30px 0;
   letter-spacing: .8px;
+  height: 100%;
 }
 .section-four {
   background-color: #333;
@@ -4127,10 +4128,12 @@ body {
   font-size: 18px;
   margin: 12px 0 46px;
   width: 840px;
+  height: 100%;
 }
 .section-six-content {
   list-style: none;
   width: 790px;
+  height: 100%;
 }
 .section-six-content__item {
   font-family: 'PragmaticaLight';
@@ -4151,11 +4154,13 @@ body {
   font-family: 'Pragmatica';
   line-height: 1.2;
   letter-spacing: .9px;
+  height: 100%;
   margin-bottom: 38px;
 }
 .section-seven__text {
   font-family: 'PragmaticaLight';
   font-size: 30px;
+  height: 100%;
   letter-spacing: .7px;
 }
 .section-seven .form {
