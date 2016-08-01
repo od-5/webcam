@@ -1,9 +1,34 @@
 .sign {
-  margin: 40px auto ;
-  width: 300px;
+  background-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px #ddd;
+  padding: 42px;
+  position: relative;
 }
-@media (max-width: 767px) {
-  .sign {
-    width: 90%;
-  }
+.sign__bg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.sign-form {
+  width: 374px;
+  margin-bottom: 14px;
+}
+.sign-form .form-control {
+  height: 55px;
+  padding: 0 17px;
+  font-size: 16px;
+  line-height: 55px;
+}
+.sign-form input {
+  background-color: #e7f5ff;
+}
+.sign-form .btn {
+  width: 100%;
+  display: block;
+  line-height: 55px;
+  padding: 0;
+  border: 0;
 }

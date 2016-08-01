@@ -8,13 +8,4 @@
   <li {% if usertype == 3 %}class="active"{% endif %}>
     <a href="{% url 'cabinet:welcome' %}?usertype=3">Вход для сео специалиста</a>
   </li>
-  <li>
-    <a href="{% url 'cabinet:terms' %}">Правила использования</a>
-  </li>
-  <li>
-    <a href="{% url 'cabinet:confidentiality' %}">Конфиденциальность</a>
-  </li>
-  <li>
-    <a href="{% url 'cabinet:contacts' %}">Контакты</a>
-  </li>
 </ul>

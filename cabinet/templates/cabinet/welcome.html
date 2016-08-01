@@ -1,20 +1,19 @@
 {% extends 'cabinet/cabinet_base.html' %}
-{% block title %}Выберите типа пользователя для входа{% endblock %}
-{% block header %}
-  <header class="header">
+{% block title %}Выберите тип пользователя для входа{% endblock %}
+{% block header_menu %}
+  {% load staticfiles %}
+  <nav class="navbar navbar-inverse">
     <div class="container">
-      <div>
-        <h1 class="bottom-add">Большой красивый логотип</h1>
-      </div>
-
-      <div class="clearfix"></div>
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          {% include 'cabinet/__includes/welcome_menu.html' with class="nav navbar-nav" %}
+      <div class="col-lg-12">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'cabinet:welcome' %}">
+            <img src="{% static 'img/logotype.png' %}" alt="onlinestripclub.pro">
+          </a>
         </div>
-      </nav>
+      {% include 'cabinet/__includes/welcome_menu.html' with class="nav navbar-nav navbar-right" %}
+      </div>
     </div>
-  </header>
+  </nav>
 {% endblock %}
 {% block main %}
   <div class="row">
@@ -24,53 +23,54 @@
           <p class="alert alert-warning">{{ error }}</p>
         </div>
       {% endif %}
-      <h2 class="text-center bottom-add">
+      <h1>
         Вход для {% if usertype == 2 %}вебмастера{% elif usertype == 3 %}сео специалиста{% else %}администратора{% endif %}
-      </h2>
+      </h1>
     </div>
     <div class="col-lg-12">
-      {% if usertype == 1 %}
-        <table class="table-center">
-          <tbody>
-            <tr>
-              <td>Логин:&nbsp;&nbsp;</td>
-              <td>admin</td>
-            </tr>
-            <tr>
-              <td>Пароль:&nbsp;&nbsp;</td>
-              <td>admin</td>
-            </tr>
-          </tbody>
-        </table>
-      {% elif usertype == 2 %}
-        <table class="table-center">
-          <tbody>
-            <tr>
-              <td>Логин:&nbsp;&nbsp;</td>
-              <td>webmaster</td>
-            </tr>
-            <tr>
-              <td>Пароль:&nbsp;&nbsp;</td>
-              <td>webmaster</td>
-            </tr>
-          </tbody>
-        </table>
-      {% elif usertype == 3 %}
-        <table class="table-center">
-          <tbody>
-            <tr>
-              <td>Логин:&nbsp;&nbsp;</td>
-              <td>testing</td>
-            </tr>
-            <tr>
-              <td>Пароль:&nbsp;&nbsp;</td>
-              <td>testing</td>
-            </tr>
-          </tbody>
-        </table>
-      {% endif %}
+
       <div class="sign">
-        <form action="" role="form" method="post" class="bottom-add">{% csrf_token %}
+        {% if usertype == 1 %}
+        <table>
+          <tbody>
+            <tr>
+              <td>Логин:&nbsp;&nbsp;</td>
+              <td>admin</td>
+            </tr>
+            <tr>
+              <td>Пароль:&nbsp;&nbsp;</td>
+              <td>admin</td>
+            </tr>
+          </tbody>
+        </table>
+        {% elif usertype == 2 %}
+        <table>
+          <tbody>
+            <tr>
+              <td>Логин:&nbsp;&nbsp;</td>
+              <td>webmaster</td>
+            </tr>
+            <tr>
+              <td>Пароль:&nbsp;&nbsp;</td>
+              <td>webmaster</td>
+            </tr>
+          </tbody>
+        </table>
+        {% elif usertype == 3 %}
+        <table>
+          <tbody>
+            <tr>
+              <td>Логин:&nbsp;&nbsp;</td>
+              <td>testing</td>
+            </tr>
+            <tr>
+              <td>Пароль:&nbsp;&nbsp;</td>
+              <td>testing</td>
+            </tr>
+          </tbody>
+        </table>
+        {% endif %}
+        <form action="" role="form" method="post" class="sign-form">{% csrf_token %}
           <input type="hidden" name="usertype" value="{{ usertype|default:1 }}">
           <div class="form-group">
             <input type="text" name="username" id="id_username" placeholder="Логин" class="form-control">
@@ -82,14 +82,12 @@
             <input type="submit" value="Войти" class="btn btn-info">
           </div>
         </form>
-        <p class="small">Забыли пароль? Вы можете восстановить его <a href="#">здесь</a>.</p>
+        <p class="small">Забыли пароль? <br> Вы можете восстановить его <a href="#">здесь</a>.</p>
+        <img src="{% static 'img/sign_girls.png' %}" alt="" class="sign__bg">
       </div>
     </div>
   </div>
 {% endblock %}
-{% block footer %}
-  <div>
+{% block footer-menu %}
   {% include 'cabinet/__includes/welcome_menu.html' %}
-  <div class="clearfix"></div>
-  </div>
 {% endblock %}

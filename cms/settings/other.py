@@ -19,10 +19,10 @@ else:
     DATABASES = {
         'default': {
              'ENGINE': 'django.db.backends.mysql',
-             'NAME': 'rylcevalex$webcam',
-             'USER': 'rylcevalex',
-             'PASSWORD': 'asdasdasd',
-             'HOST': 'rylcevalex.mysql.pythonanywhere-services.com',
+             'NAME': 'enjoyafrru_strip',
+             'USER': 'enjoyafrru_strip',
+             'PASSWORD': 'alena2010',
+             'HOST': '',
              'PORT': '',
         }
     }

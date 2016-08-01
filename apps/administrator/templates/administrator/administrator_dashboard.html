@@ -1,272 +1,272 @@
 {% extends 'cabinet/cabinet_base.html' %}
 {% load staticfiles %}
 {% block title %}Рабочий стол администратора{% endblock %}
-{% block header %}
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7">
-        <h1 class="bottom-add">Большой красивый логотип</h1>
+{% block header_menu %}
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="col-lg-12">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'cabinet:welcome' %}">
+            <img src="{% static 'img/logotype.png' %}" alt="onlinestripclub.pro">
+          </a>
+        </div>
+      {% include 'administrator/__includes/administrator_menu.html' with class="nav navbar-nav navbar-right" %}
       </div>
-      <div class="col-lg-5 text-right">
-        <a href="{% url 'cabinet:administrator:profile' %}" class="login"><span class="glyphicon glyphicon-user"></span> Вы вошли как: {{ user }}</a>
-        <br>
-        <a href="{% url 'logout' %}?next={% url 'cabinet:welcome' %}" class="logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a>
-      </div>
-      <div class="clearfix"></div>
     </div>
-    <nav class="navbar navbar-default bottom-remove">
-      <div class="container-fluid">
-        {% include 'administrator/__includes/administrator_menu.html' with class="nav navbar-nav" %}
-      </div>
-    </nav>
-  </div>
+  </nav>
 {% endblock %}
 {% block main %}
   <div class="row">
     <div class="col-lg-12">
-      <h2 class="text-center bottom-add">Рабочий стол</h2>
+      <h1>Рабочий стол</h1>
     </div>
-    <div class="col-lg-12">
-      <div class="quickmenulist">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="panel panel-default">
-              <div class="panel-heading">Статистика</div>
-              <div class="panel-body">
-                <table class="list">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <a href="{% url 'cabinet:administrator:quickstats' %}">
-                          <img src="{% static 'administrator/icons/quick_stats.png' %}" alt=""><br>
-                          Обзорная статистика
-                        </a>
-                      </td>
-                      <td>
-                        <a href="{% url 'cabinet:administrator:dashboard' %}">
-                          <img src="{% static 'administrator/icons/domain_stats.png' %}" alt="">
-                          <br>
-                          Реферальная статистика
-                        </a>
-                      </td>
-                      <td>
-                        <a href="{% url 'cabinet:administrator:dashboard' %}">
-                          <img src="{% static 'administrator/icons/webmaster_stats.png' %}" alt="">
-                          <br>
-                          Статистика по Вебмастерам
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+    <div class="clearfix"></div>
+    <div class="main-content dashboard">
+      <div class="main-content__item">
+        <div class="col-lg-12">
+          <h2>Статистика</h2>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:quickstats' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/quick_stats.png' %}" alt="">
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="panel panel-default">
-              <div class="panel-heading">Вебмастера</div>
-              <div class="panel-body">
-                <table class="list">
-                  <tbody>
-                    <tr>
-                      <td>
-                        <a href="{% url 'cabinet:administrator:webmaster_list' %}">
-                          <img src="{% static 'administrator/icons/webmasters.png' %}" alt=""><br>
-                          Управление вебмастерами
-                        </a>
-                      </td>
-                      <td>
-                        <a href="{% url 'cabinet:administrator:webmaster_add' %}">
-                          <img src="{% static 'administrator/icons/webmaster_add.png' %}" alt="">
-                          <br>
-                          Добавить нового вебмастера
-                        </a>
-                      </td>
-                      <td>
-                        <a href="{% url 'cabinet:administrator:webmaster_banners' %}">
-                          <img src="{% static 'administrator/icons/banners.png' %}" alt="">
-                          <br>
-                          Управление баннерами
-                        </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+            <p class="dashboard-item__name">Обзорная статистика</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:refererstats' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/referal_stats.png' %}" alt="">
             </div>
-          </div>
+            <p class="dashboard-item__name">Реферальная статистика</p>
+          </a>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">Клиенты</div>
-          <div class="panel-body">
-            <table class="list">
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:customer_list' %}">
-                      <img src="{% static 'administrator/icons/customers.png' %}" alt=""><br>
-                      Управление клиентами
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:customer_add' %}">
-                      <img src="{% static 'administrator/icons/customer_add.png' %}" alt="">
-                      <br>
-                      Добавить нового клиента
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:blockedlocations' %}">
-                      <img src="{% static 'administrator/icons/blocked_locations.png' %}" alt="">
-                      <br>
-                      Заблокированные клиента и адреса
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:membershiptransactions' %}">
-                      <img src="{% static 'administrator/icons/membershiptransactions.png' %}" alt="">
-                      <br>
-                      Оплата за подписки
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:chatlogs' %}">
-                      <img src="{% static 'administrator/icons/chatlogs.png' %}" alt="">
-                      <br>
-                      Логи чатов
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:badwords' %}">
-                      <img src="{% static 'administrator/icons/bad_words.png' %}" alt="">
-                      <br>
-                      Плохие слова
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:webmasterstats' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/webmaster_stats.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Статистика по Вебмастерам</p>
+          </a>
         </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">WEB сайт</div>
-          <div class="panel-body">
-            <table class="list">
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:event_list' %}">
-                      <img src="{% static 'administrator/icons/webmasters.png' %}" alt=""><br>
-                      Управление мероприятиями
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:event_add' %}">
-                      <img src="{% static 'administrator/icons/webmaster_add.png' %}" alt="">
-                      <br>
-                      Добавить новое мероприятия
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:section_list' %}">
-                      <img src="{% static 'administrator/icons/material.png' %}" alt="">
-                      <br>
-                      Материалы сайта
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:material_add' %}">
-                      <img src="{% static 'administrator/icons/material_add.png' %}" alt="">
-                      <br>
-                      Добавить новый материал
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">Настройки</div>
-          <div class="panel-body">
-            <table class="list">
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:systemconfig' %}">
-                      <img src="{% static 'administrator/icons/system_config.png' %}" alt="">
-                      <br>
-                      Настройки
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:worker_list' %}">
-                      <img src="{% static 'administrator/icons/webmasters.png' %}" alt=""><br>
-                      Управление сотрудниками
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:archive_list' %}">
-                      <img src="{% static 'administrator/icons/banners.png' %}" alt="">
-                      <br>
-                      Архив видео
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:paymentpackages_list' %}">
-                      <img src="{% static 'administrator/icons/payment_packages.png' %}" alt="">
-                      <br>
-                      Платёжные пакеты
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:newsletter_list' %}">
-                      <img src="{% static 'administrator/icons/newsletter.png' %}" alt="">
-                      <br>
-                      Рассылки
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:paymentcoupon_list' %}">
-                      <img src="{% static 'administrator/icons/payment_coupons.png' %}" alt="">
-                      <br>
-                      Оплата купонов
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:camera_list' %}">
-                      <img src="{% static 'administrator/icons/camera.png' %}" alt="">
-                      <br>
-                      Камеры
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:page_list' %}">
-                      <img src="{% static 'administrator/icons/seo.png' %}" alt="">
-                      <br>
-                      СЕО
-                    </a>
-                  </td>
-                  <td>
-                    <a href="{% url 'cabinet:administrator:profile' %}">
-                      <img src="{% static 'administrator/icons/profile.png' %}" alt="">
-                      <br>
-                      Профиль
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <div class="clearfix"></div>
       </div>
-      <div class="clearfix"></div>
+      <div class="main-content__item">
+        <div class="col-lg-12">
+          <h2>Вебмастера</h2>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:webmaster_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/webmaster_list.png' %}" alt=""><br>
+            </div>
+            <p class="dashboard-item__name">Управление вебмастерами</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:webmaster_add' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/webmaster_add.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Добавить нового вебмастера</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:webmaster_banners' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/banners.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Управление баннерами</p>
+          </a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="main-content__item">
+        <div class="col-lg-12">
+          <h2>Клиенты</h2>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:customer_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/customers.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Управление клиентами</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:customer_add' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/customer_add.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Добавить нового клиента</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:blockedlocations' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/blocked_locations.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Заблокированные клиенты и адреса</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:membershiptransactions' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/membershiptransactions.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Оплата за подписки</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:chatlogs' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/chatlogs.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Логи чатов</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:badwords' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/bad_words.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Плохие слова</p>
+          </a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="main-content__item">
+        <div class="col-lg-12">
+          <h2>WEB сайт</h2>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:event_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/event_list.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Управление мероприятиями</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:event_add' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/event_add.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Добавить новое мероприятие</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:section_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/material_list.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Материалы сайта</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:material_add' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/material_add.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Добавить новый материал</p>
+          </a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="main-content__item">
+        <div class="col-lg-12">
+          <h2>Настройки</h2>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:systemconfig' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/system_config.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Настройки</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:worker_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/worker_list.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Управление сотрудниками</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:archive_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/video_archive.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Архив видео</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:paymentpackages_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/payment_packages.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Платёжные пакеты</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:newsletter_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/newsletter.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Рассылки</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:paymentcoupon_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/payment_coupons.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Оплата купонов</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:camera_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/camera_list.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Камеры</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:page_list' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/seo.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">СЕО</p>
+          </a>
+        </div>
+        <div class="col-lg-2">
+          <a href="{% url 'cabinet:administrator:profile' %}" class="dashboard-item">
+            <div class="dashboard-item__icon">
+              <img src="{% static 'administrator/img/profile.png' %}" alt="">
+            </div>
+            <p class="dashboard-item__name">Профиль</p>
+          </a>
+        </div>
+        <div class="clearfix"></div>
+      </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 {% endblock %}
-{% block footer %}
-  <div>
+{% block footer-menu %}
   {% include 'administrator/__includes/administrator_menu.html' %}
-  <div class="clearfix"></div>
-  </div>
 {% endblock %}
