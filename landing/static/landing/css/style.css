@@ -3765,12 +3765,13 @@ body {
 html,
 body {
   min-height: 100%;
-  height: auto;
+  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 body {
+  min-height: 400px;
   position: relative;
   min-width: 960px;
   font-size: 16px;
@@ -3779,6 +3780,12 @@ body {
   background: #fff;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+}
+body.thnx {
+  background: url('../img/section-four__bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
 }
 #scrollup {
   position: fixed;
@@ -4174,6 +4181,9 @@ body {
   background: #1892e2;
   color: #fff;
 }
+.section-thnx {
+  padding: 50px 0;
+}
 .footer {
   background: #0a0a0a;
   font-family: 'PragmaticaLight';
@@ -4181,6 +4191,11 @@ body {
   color: #fff;
   padding-bottom: 44px;
   padding-top: 47px;
+}
+.footer_thnx {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 }
 .footer .warning {
   margin: 0;

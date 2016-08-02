@@ -6,6 +6,11 @@
   padding-bottom: 44px;
   padding-top: 47px;
 }
+.footer_thnx {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
 .footer .warning {
   margin: 0;
   width: 100%;

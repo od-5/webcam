@@ -24,5 +24,8 @@ SUIT_CONFIG = {
         'sites',
         {'label': u'Перейти на сайт', 'icon': 'icon-eye-open', 'url': '/'},
         {'label': u'Пользователи', 'icon': 'icon-user', 'models': ('core.user',)},
+        {'label': u'Настройки', 'icon': 'icon-cog', 'models': ('landing.setup',)},
+        {'label': u'Заявки', 'icon': 'icon-list-alt', 'models': ('landing.ticket',)},
+        {'label': u'Продажи', 'icon': 'icon-user', 'models': ('landing.sale',)},
     ),
 }

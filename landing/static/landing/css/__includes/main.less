@@ -1,11 +1,12 @@
 html, body{
 	min-height: 100%;
-  height: auto;
+  height: 100%;
   width: 100%;
 	margin: 0;
 	padding: 0;
 }
 body{
+  min-height: 400px;
   position: relative;
   min-width: 960px;
   font-size: 16px;
@@ -15,6 +16,12 @@ body{
   //line-height: 22px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  &.thnx {
+    background: url('../img/section-four__bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+  }
 }
 #scrollup {
   position: fixed;

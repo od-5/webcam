@@ -17,9 +17,9 @@ TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ['*']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = 'info@reklamalift.com'
+DEFAULT_FROM_EMAIL = 'info@onlinestripclub.pro'
 EMAIL_HOST = 'smtp.fullspace.ru'
-EMAIL_HOST_USER = 'info@reklamalift.com'
+EMAIL_HOST_USER = 'info@onlinestripclub.pro'
 EMAIL_HOST_PASSWORD = 'alena2010'
 
 ADMINS = (('Alexey', 'od-5@yandex.ru'),)

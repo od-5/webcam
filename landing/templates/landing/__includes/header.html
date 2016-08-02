@@ -13,6 +13,7 @@
       <div class="clearfix"></div>
     </div>
   </div>
+  {% if not thnx %}
   <div class="header-content">
     <video autoplay  poster="{% static 'landing/img/video-bg.jpg' %}" id="bgvid" loop>
       <source src="{% static 'landing/video/video.mov' %}" type="video/webm">
@@ -55,4 +56,5 @@
       <div class="clearfix"></div>
     </div>
   </div>
+  {% endif %}
 </div>
