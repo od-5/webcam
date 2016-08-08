@@ -13,6 +13,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
   <![endif]-->
   <script src="{% static 'landing/js/lib/jquery-1.11.2.min.js' %}"></script>
+  <script src="{% static 'landing/js/lib/jquery.fancybox.pack.js' %}"></script>
   <script src="{% static 'landing/js/lib/jquery.form.js' %}"></script>
   <script src="{% static 'landing/js/lib/jquery.validate.js' %}"></script>
   <script src="{% static 'landing/js/lib/jquery.maskedinput.js' %}"></script>
@@ -33,6 +34,14 @@
   {% include 'landing/__includes/section_six.html' %}
   {% include 'landing/__includes/section_seven.html' %}
   {% include 'landing/__includes/footer.html' %}
+  <div id="confidentiality-block">
+    <h2>Политика конфиденциальности</h2>
+    <p>Мы не собираем личную информацию о Вас, когда Вы заходите на наш сайт.
+    Вы можете анонимно просматривать сайт. Тем не менее, Ваш браузер все же автоматически сообщает нам тип компьютера и операционной системы, которые Вы используете. Единственная личная информация о Вас, которую мы получаем, это те данные, которые Вы добровольно предоставляете при заполнении форм.
+    При заполнении форм на сайте у Вас запросят персональную информацию, такую как имя, номер телефона. Предоставление такой информации в ответ на запрос осуществляется Вами исключительно добровольно.
+    Предоставленная Вами информация используется чтобы оказать те услуги, которые Вы сами запрашиваете.
+    </p>
+  </div>
   {{ SETUP.bottom_js|safe|default:'' }}
 </body>
 </html>
