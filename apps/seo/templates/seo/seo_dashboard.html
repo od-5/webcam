@@ -1,25 +1,19 @@
 {% extends 'cabinet/cabinet_base.html' %}
 {% load staticfiles %}
 {% block title %}Рабочий стол сео специалиста{% endblock %}
-{% block header %}
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7">
-        <h1 class="bottom-add">Большой красивый логотип</h1>
+{% block header_menu %}
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="col-lg-12">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'cabinet:welcome' %}">
+            <img src="{% static 'img/logotype.png' %}" alt="onlinestripclub.pro">
+          </a>
+        </div>
+      {% include 'seo/__includes/seo_menu.html' with class="nav navbar-nav navbar-right" %}
       </div>
-      <div class="col-lg-5 text-right">
-        <a href="{% url 'cabinet:seo:profile' %}" class="login"><span class="glyphicon glyphicon-user"></span> Вы вошли как: {{ user }}</a>
-        <br>
-        <a href="{% url 'logout' %}?next={% url 'cabinet:welcome' %}" class="logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a>
-      </div>
-      <div class="clearfix"></div>
     </div>
-    <nav class="navbar navbar-default bottom-remove">
-      <div class="container">
-        {% include 'seo/__includes/seo_menu.html' with class="nav navbar-nav" %}
-      </div>
-    </nav>
-  </div>
+  </nav>
 {% endblock %}
 {% block main %}
   <div class="row">

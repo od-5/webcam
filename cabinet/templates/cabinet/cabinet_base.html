@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 {% block viewport %}
 {#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
-  <meta name="viewport" content="width=1366px">
+  <meta name="viewport" content="width=1366">
 {% endblock %}
 {% load staticfiles %}
   <title>{% block title %}Заголовок{% endblock %}</title>
@@ -51,7 +51,7 @@
               <a href="{% url 'cabinet:terms' %}" class="header-top-menu__link header-top-menu__link_gray">Правила использования</a>
             </li>
             <li class="header-top-menu__item">
-              <a href="{% url 'cabinet:confidentiality' %}" class="header-top-menu__link header-top-menu__link_gray">Политика конфиденциальности</a>
+              <a href="#confidentiality-block" class="header-top-menu__link header-top-menu__link_gray js-conf-btn">Политика конфиденциальности</a>
             </li>
             <li class="header-top-menu__item">
               <a href="{% url 'cabinet:contacts' %}" class="header-top-menu__link header-top-menu__link_gray">Контакты</a>
@@ -112,6 +112,7 @@
 
 
 </footer>
-
+{% block bottom %}
+{% endblock %}
 </body>
 </html>

@@ -10,7 +10,6 @@ urlpatterns = patterns(
     url(r'^$', 'cabinet_sign', name='welcome'),
     url(r'^contacts/$', TemplateView.as_view(template_name='cabinet/contacts.html'), name='contacts'),
     url(r'^terms/$', TemplateView.as_view(template_name='cabinet/terms.html'), name='terms'),
-    url(r'^confidentiality/$', TemplateView.as_view(template_name='cabinet/confidentiality.html'), name='confidentiality'),
 
     url(r'^administrator/', include('apps.administrator.urls', namespace='administrator'),),
     url(r'^webmaster/', include('apps.webmaster.urls', namespace='webmaster'),),

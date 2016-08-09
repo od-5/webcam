@@ -204,3 +204,15 @@ h2 {
 .fieldrequired {
   color: red;
 }
+#confidentiality-block {
+  display: none;
+  width: 350px;
+  padding: 10px;
+}
+#confidentiality-block h2 {
+  text-align: center;
+}
+#confidentiality-block p {
+  font-size: 18px;
+  text-align: justify;
+}
