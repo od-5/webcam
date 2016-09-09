@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 {% block viewport %}
 {#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
-  <meta name="viewport" content="width=1366">
+  <meta name="viewport" content="width=1000">
 {% endblock %}
 {% load staticfiles %}
   <title>{% block title %}{{ SETUP.title|default:'Заголовок сайта' }}{% endblock %}</title>
@@ -25,7 +25,10 @@
   {{ SETUP.top_js|safe|default:'' }}
 </head>
 <body>
+{% block header %}
   {% include 'landing/__includes/header.html' %}
+{% endblock %}
+{% block content %}
   {% include 'landing/__includes/section_first.html' %}
   {% include 'landing/__includes/section_second.html' %}
   {% include 'landing/__includes/section_third.html' %}
@@ -33,7 +36,10 @@
   {% include 'landing/__includes/section_five.html' %}
   {% include 'landing/__includes/section_six.html' %}
   {% include 'landing/__includes/section_seven.html' %}
+{% endblock %}
+{% block footer %}
   {% include 'landing/__includes/footer.html' %}
+{% endblock %}
   <div id="confidentiality-block">
     <h2>Политика конфиденциальности</h2>
     <p>Мы не собираем личную информацию о Вас, когда Вы заходите на наш сайт.

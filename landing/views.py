@@ -13,7 +13,8 @@ class LandingView(TemplateView):
         context = super(LandingView, self).get_context_data()
         setup = Setup.objects.first()
         context.update({
-            'SETUP': setup
+            'SETUP': setup,
+            'MAIN_PAGE': True
         })
         return context
 

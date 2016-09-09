@@ -294,3 +294,104 @@
 .section-thnx {
   padding: 50px 0;
 }
+.section-site {
+  background: url('../img/section-six__bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  padding: 50px 0 100px;
+  color: #fff;
+}
+.section-site__text {
+  font-family: 'PragmaticaLight';
+  font-size: 18px;
+  margin: 12px 0 46px;
+  width: 840px;
+  height: 100%;
+}
+.section-site-mobile {
+  display: inline-block;
+  vertical-align: bottom;
+  background: url('../img/section-site-mobile__bg.png') no-repeat 0 0;
+  background-size: contain;
+  width: 120px;
+  height: 252px;
+  cursor: pointer;
+}
+.section-site-mobile-view {
+  background: url('../img/section-site-mobile__bg.png') no-repeat 0 0;
+  background-size: 100% 100%;
+  width: 370px;
+  height: 636px;
+  margin: auto;
+}
+.section-site-mobile-view iframe {
+  margin-top: 88px;
+  margin-left: 24px;
+}
+.section-site-laptop {
+  display: inline-block;
+  vertical-align: top;
+  background: url('../img/section-site-laptop__bg.png') no-repeat 0 0;
+  background-size: contain;
+  width: 600px;
+  height: 350px;
+  cursor: pointer;
+}
+.section-site-tablet {
+  display: inline-block;
+  vertical-align: bottom;
+  background: url('../img/section-site-tablet__bg.png') no-repeat 0 0;
+  background-size: contain;
+  width: 220px;
+  height: 327px;
+  cursor: pointer;
+}
+.section-site-tablet-view {
+  background: url('../img/section-site-tablet-view__bg.png') no-repeat 0 0;
+  background-size: 100% 100%;
+  width: 900px;
+  height: 605px;
+  margin: auto;
+}
+.section-site-tablet-view iframe {
+  margin-top: 30px;
+  margin-left: 33px;
+}
+.section-site-mobile:hover .section-site-button,
+.section-site-laptop:hover .section-site-button,
+.section-site-tablet:hover .section-site-button {
+  display: block;
+}
+.section-site-button {
+  display: none;
+  text-align: center;
+  text-decoration: none;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: Arial;
+  color: #fff;
+  text-shadow: 2px 2px 0 #333;
+  background-color: rgba(102, 153, 255, 0.8);
+}
+.section-site-button__mobile {
+  width: 101px;
+  height: 180px;
+  line-height: 180px;
+  margin-top: 37px;
+  margin-left: 10px;
+}
+.section-site-button__laptop {
+  width: 437px;
+  margin-top: 27px;
+  margin-left: 81px;
+  height: 274px;
+  line-height: 247px;
+}
+.section-site-button__tablet {
+  width: 197px;
+  height: 263px;
+  margin-top: 32px;
+  margin-left: 12px;
+  line-height: 263px;
+}
