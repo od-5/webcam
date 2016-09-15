@@ -25,6 +25,7 @@
   {{ SETUP.top_js|safe|default:'' }}
 </head>
 <body>
+<div id="wrapper">
 {% block header %}
   {% include 'landing/__includes/header.html' %}
 {% endblock %}
@@ -37,6 +38,7 @@
   {% include 'landing/__includes/section_six.html' %}
   {% include 'landing/__includes/section_seven.html' %}
 {% endblock %}
+</div>
 {% block footer %}
   {% include 'landing/__includes/footer.html' %}
 {% endblock %}
