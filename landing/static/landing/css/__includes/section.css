@@ -299,6 +299,13 @@
   padding: 50px 0 100px;
   color: #fff;
 }
+.section-site__back {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
 .section-site__text {
   font-family: 'PragmaticaLight';
   font-size: 18px;
