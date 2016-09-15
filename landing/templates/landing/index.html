@@ -25,7 +25,7 @@
   {{ SETUP.top_js|safe|default:'' }}
 </head>
 <body>
-<div id="wrapper">
+<div id="wrapper"{% block wrapper_class %}{% endblock %}>
 {% block header %}
   {% include 'landing/__includes/header.html' %}
 {% endblock %}
