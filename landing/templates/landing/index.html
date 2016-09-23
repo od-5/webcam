@@ -1,55 +1,360 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-  <meta charset="UTF-8">
-{% block viewport %}
-{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
-  <meta name="viewport" content="width=1000">
-{% endblock %}
-{% load staticfiles %}
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="keywords" content="{% block meta_key %}{{ SETUP.meta_key|default:'Ключевые слова' }}{% endblock %}">
+  <meta name="description" content="{% block meta_desc %}{{ SETUP.meta_desc|default:'Мета описание' }}{% endblock %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ SETUP.title|default:'Заголовок сайта' }}{% endblock %}</title>
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-  <![endif]-->
-  <script src="{% static 'landing/js/lib/jquery-1.11.2.min.js' %}"></script>
-  <script src="{% static 'landing/js/lib/jquery.fancybox.pack.js' %}"></script>
-  <script src="{% static 'landing/js/lib/jquery.form.js' %}"></script>
-  <script src="{% static 'landing/js/lib/jquery.validate.js' %}"></script>
-  <script src="{% static 'landing/js/lib/jquery.maskedinput.js' %}"></script>
-  <script src="{% static 'landing/js/main.js' %}"></script>
-  <!--[if lt IE 9]><script type="text/javascript" src="{% static 'landing/js/lib/html5.js' %}"></script><![endif]-->
-  <!--[if lt IE 9]><script type="text/javascript" src="{% static 'landing/js/lib/placeholder.js' %}"></script><![endif]-->
-  <link rel="stylesheet" href="{% static 'landing/css/style.css' %}">
-  <link rel="shortcut icon" href="{% static 'landing/img/favicon.ico' %}" type="image/x-icon">
-  {{ SETUP.top_js|safe|default:'' }}
+  <link media="all" rel="stylesheet" type="text/css" href="{% static 'landing/css/all.css' %}" />
+  <link media="all" rel="stylesheet" type="text/css" href="{% static 'landing/css/jquery.fancybox.css' %}" />
+  <link media="all" rel="stylesheet" type="text/css" href="{% static 'landing/css/owl.carousel.css' %}" />
+  <script src="{% static 'landing/js/jquery-1.9.1.min.js' %}"></script>
+  <script src="{% static 'landing/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'landing/js/jquery.fancybox.js' %}"></script>
+  <script src="{% static 'landing/js/jquery.validate.js' %}"></script>
+  <script src="{% static 'landing/js/jquery.scrollTo.js' %}"></script>
+  <script src="{% static 'landing/js/all.js' %}"></script>
+  <!--[if lt IE 9]><script type="text/javascript" src="{% static 'landing/js/html5.js' %}"></script><![endif]-->
+  <!--[if lt IE 9]><script type="text/javascript" src="{% static 'landing/js/placeholder.js' %}"></script><![endif]-->
+{% block top_js %}{% endblock %}
+{{ SETUP.top_js|safe|default:'' }}
 </head>
 <body>
-<div id="wrapper"{% block wrapper_class %}{% endblock %}>
-{% block header %}
-  {% include 'landing/__includes/header.html' %}
-{% endblock %}
-{% block content %}
-  {% include 'landing/__includes/section_first.html' %}
-  {% include 'landing/__includes/section_second.html' %}
-  {% include 'landing/__includes/section_third.html' %}
-  {% include 'landing/__includes/section_four.html' %}
-  {% include 'landing/__includes/section_five.html' %}
-  {% include 'landing/__includes/section_six.html' %}
-  {% include 'landing/__includes/section_seven.html' %}
-{% endblock %}
-</div>
-{% block footer %}
-  {% include 'landing/__includes/footer.html' %}
-{% endblock %}
-  <div id="confidentiality-block">
-    <h2>Политика конфиденциальности</h2>
-    <p>Мы не собираем личную информацию о Вас, когда Вы заходите на наш сайт.
-    Вы можете анонимно просматривать сайт. Тем не менее, Ваш браузер все же автоматически сообщает нам тип компьютера и операционной системы, которые Вы используете. Единственная личная информация о Вас, которую мы получаем, это те данные, которые Вы добровольно предоставляете при заполнении форм.
-    При заполнении форм на сайте у Вас запросят персональную информацию, такую как имя, номер телефона. Предоставление такой информации в ответ на запрос осуществляется Вами исключительно добровольно.
-    Предоставленная Вами информация используется чтобы оказать те услуги, которые Вы сами запрашиваете.
-    </p>
+  <div id="wrapper">
+    <header id="header">
+      <div class="header-top">
+        <div class="holder">
+          <div class="header-logo">
+            <a href="{% url 'landing:index' %}" class="header-logo-link">
+              <img src="{% static 'landing/images/logo.png' %}" alt="">
+              <div class="header-logo-text">OnlineStipClub<span class="pink">.pro</span></div>
+            </a>
+          </div>
+          <ul class="header-nav">
+            <li><a href="{% url 'landing:index' %}"><span>Главная</span></a></li>
+            <li><a href="{% url 'landing:site' %}"><span>Демо-Сайт</span></a></li>
+            <li><a href="http://demo.onlinestripclub.pro/cabinet/"><span>Демо-Кабинет</span></a></li>
+          </ul>
+        </div>
+      </div>
+    {% block header %}
+      <div class="header-main">
+        <div class="holder">
+          <h1 class="main-title"><span class="pink">Зарабатывайте свыше
+          2 млн. рублей </span><br>
+          чистой прибыли в год!</h1>
+          <div class="header-main-subtitle">Станьте владельцем online стриптиз-клуба №1 в России</div>
+          <div class="header-main-text">
+            <p>Онлайн-бизнес по франшизе с полным сопровождением. <span class="pink">Трансляция сцены стриптиз-клуба в прямом эфире</span>: прибыльный
+            бизнес, с которым справится всего 1 человек. </p>
+            <p>Запишитесь на бесплатную консультацию, для того чтобы узнать, как этого достичь:</p>
+          </div>
+          <div class="header-form">
+            <form action="{% url 'landing:ticket' %}" method="post">
+              {% csrf_token %}
+              <fieldset>
+                <input type="text" name="name" class="input required" placeholder="Как вас зовут?">
+                <input type="text" name="phone" class="input required" placeholder="Введите ваш телефон">
+                <input type="hidden" name="theme" value="Консультация">
+                <div class="button-holder">
+                  <button class="submit">Заказать консультацию</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="header-adult">
+            <div class="header-adult-num">18+</div>
+            <div class="header-adult-text">Внимание! На сайте OnlineStipClub.pro присутствует контент 18+</div>
+          </div>
+        </div>
+
+        <div class="video-bg">
+          <video class="video-block" loop autoplay muted>
+            <source src="{% static 'landing/video/video.ogv' %}" type='video/ogg; codecs="theora, vorbis"'>
+            <source src="{% static 'landing/video/video.mp4' %}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+            <source src="{% static 'landing/video/video.webm' %}" type='video/webm; codecs="vp8, vorbis"'>
+            Тег video не поддерживается вашим браузером.
+          </video>
+        </div>
+      </div>
+    {% endblock %}
+    </header>
+  {% block content %}
+    <section class="about">
+      <div class="holder">
+        <h2>Вам подойдет наше <br>предложение, если вы</h2>
+        <div class="about-block">
+          <div class="about-item">
+            <div class="about-icon"><img src="{% static 'landing/images/icon1.png' %}" alt=""></div>
+            <div class="about-text">
+              <div class="about-text-line">Уже работаете в индустрии развлечений и хотите направить свои связи и знания на создание и развитие собственного дела</div>
+            </div>
+          </div>
+          <div class="about-item">
+            <div class="about-icon"><img src="{% static 'landing/images/icon2.png' %}" alt=""></div>
+            <div class="about-text">
+              <div class="about-text-line">Ищете простой и эффективный способ получения дохода при минимальных временных затратах</div>
+            </div>
+          </div>
+          <div class="about-item">
+            <div class="about-icon"><img src="{% static 'landing/images/icon3.png' %}" alt=""></div>
+            <div class="about-text">
+              <div class="about-text-line">Хотите заняться бизнесом, но боитесь, что у вас ничего не получится из-за отсутствия опыта</div>
+            </div>
+          </div>
+          <div class="about-item">
+            <div class="about-icon"><img src="{% static 'landing/images/icon4.png' %}" alt=""></div>
+            <div class="about-text">
+              <div class="about-text-line">Ищете выгодные способы вложения свободных средств</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="think">
+      <div class="holder">
+        <article class="think-column">
+          <h2>Хватит думать, <br>пора действовать!</h2>
+          <p>В рамках франшизы вы приобретаете уникальный программный комплекс под названием «Жизнь за кулисами». Он обеспечивает
+          бесплатную трансляцию главной сцены стриптиз-клуба и трансляцию гримерных, раздевалок и специальных постановок по платной подписке.</p>
+          <p>Мы предоставим вам эффективную бизнес-модель, полную информационную поддержку и целый комплекс работающих маркетинговых инструментов.</p>
+          <p>Вы сможете контролировать свой бизнес из любой точки земного шара и зарабатывать от 200 000 рублей в месяц.</p>
+          <div class="think-button">
+            <a href="#popup-form" class="button js-popup-form__button">Узнать подробности</a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="need">
+      <div class="holder">
+        <h2>Для ведения бизнеса<br> вам не нужно будет</h2>
+        <div class="need-block">
+          <div class="need-item need-item1">
+            <div class="need-item-img">
+              <img src="{% static 'landing/images/media/need1.jpg' %}" alt="">
+            </div>
+            <div class="need-item-text">Получать<br> разрешения</div>
+          </div>
+          <div class="need-item need-item2">
+            <div class="need-item-img">
+              <img src="{% static 'landing/images/media/need2.jpg' %}" alt="">
+            </div>
+            <div class="need-item-text">Нанимать<br> сотрудников</div>
+          </div>
+          <div class="need-item">
+            <div class="need-item-img">
+              <img src="{% static 'landing/images/media/need3.jpg' %}" alt="">
+            </div>
+            <div class="need-item-text">Платить за аренду помещения</div>
+          </div>
+        </div>
+        <div class="need-text">
+          <img src="{% static 'landing/images/text.png' %}" alt="">
+          <div class="need-text-hidden">Ваш партнер решает организационные вопросы<br>Вы занимаетесь исключительно маркетингом</div>
+        </div>
+      </div>
+    </section>
+    <section class="why">
+      <div class="holder">
+        <div class="why-column">
+          <h2>Почему это выгодно?</h2>
+          <div class="why-item">
+            <div class="why-item-img">
+              <img src="{% static 'landing/images/w1.png' %}" alt="">
+              <div class="why-item-num">1</div>
+            </div>
+            <div class="why-item-text">
+              <div class="why-item-line">Вы зарабатываете даже тогда, когда спите. Трансляция идет 24 часа в сутки, 7 дней в неделю</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-img">
+              <img src="{% static 'landing/images/w2.png' %}" alt="">
+              <div class="why-item-num">2</div>
+            </div>
+            <div class="why-item-text">
+              <div class="why-item-line">Бизнес настолько прост, что вы справитесь с ним самостоятельно</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-img">
+              <img src="{% static 'landing/images/w3.png' %}" alt="">
+              <div class="why-item-num">3</div>
+            </div>
+            <div class="why-item-text">
+              <div class="why-item-line">Владельцы стриптиз-клубов заинтересованы в вашем продукте. С его помощью они повысят
+              узнаваемость заведения и приобретут новых посетителей</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-img">
+              <img src="{% static 'landing/images/w4.png' %}" alt="">
+              <div class="why-item-num">4</div>
+            </div>
+            <div class="why-item-text">
+              <div class="why-item-line">Вы станете обладателем инновационного продукта, аналогов которому нет</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-img">
+              <img src="{% static 'landing/images/w5.png' %}" alt="">
+              <div class="why-item-num">5</div>
+            </div>
+            <div class="why-item-text">
+              <div class="why-item-line">Ваши вложения полностью окупятся через 2-5 месяцев, если вы действуете согласно инструкции</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-img">
+              <img src="{% static 'landing/images/w6.png' %}" alt="">
+              <div class="why-item-num">6</div>
+            </div>
+            <div class="why-item-text">
+              <div class="why-item-line">Вы не привязаны к одному городу и при желании сможете организовать трансляции в любой точке мира</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-img">
+              <img src="{% static 'landing/images/w7.png' %}" alt="">
+              <div class="why-item-num">7</div>
+            </div>
+            <div class="why-item-text">
+              <div class="why-item-line">Основная часть вашей прибыли — пассивный доход. Большую часть времени бизнес работает на
+              вас без вашего прямого участия</div>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-img">
+              <img src="{% static 'landing/images/w8.png' %}" alt="">
+              <div class="why-item-num">8</div>
+            </div>
+            <div class="why-item-text">
+              <div class="why-item-line">Стоимость платной подписки составляет от 1000 рублей в месяц. 70% от этой суммы получите
+              вы, 30% уйдут вашему партнеру, владельцу стриптиз-клуба</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="scheme">
+      <div class="holder">
+        <h2>Как это работает?</h2>
+      </div>
+      <div class="scheme-block">
+        <div class="holder">
+          <div class="scheme-item">
+            <div class="scheme-item-img">
+              <img src="{% static 'landing/images/s-icon1.png' %}" alt="">
+            </div>
+            <div class="scheme-item-text">В рамках франшизы вы получаете программу «Жизнь за кулисами». Одна франшиза рассчитана на один клуб</div>
+          </div>
+          <div class="scheme-item">
+            <div class="scheme-item-img">
+              <img src="{% static 'landing/images/s-icon2.png' %}" alt="">
+            </div>
+            <div class="scheme-item-text">После переговоров с владельцами стриптиз-клубов вы заключаете договор на установку
+            программного комплекса на базе заведения</div>
+          </div>
+          <div class="scheme-item">
+            <div class="scheme-item-img">
+              <img src="{% static 'landing/images/s-icon3.png' %}" alt="">
+            </div>
+            <div class="scheme-item-text">Мы настраиваем программу и трансляцию, создаем профессиональную рекламную кампанию онлайн и оффлайн</div>
+          </div>
+          <div class="scheme-item">
+            <div class="scheme-item-img">
+              <img src="{% static 'landing/images/s-icon4.png' %}" alt="">
+            </div>
+            <div class="scheme-item-text">На ваш сайт приходят посетители, оплачивают подписку и получают права доступа к платным трансляциям</div>
+          </div>
+          <div class="scheme-item">
+            <div class="scheme-item-img">
+              <img src="{% static 'landing/images/s-icon5.png' %}" alt="">
+            </div>
+            <div class="scheme-item-text">Уже на 4-5-ый месяцы после запуска вы выходите на уровень от 400 посетителей, оформивших
+            платную подписку, и зарабатываете от 150-200 тыс. рублей чистой прибыли ежемесячно</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info">
+      <div class="holder">
+        <h2>Что вам нужно знать</h2>
+        <div class="info-text">Откройте новое течение в индустрии развлечений в России, и уже через год вы будете первым в
+        своей нише в вашем городе!</div>
+        <ul class="info-list">
+          <li>Формат запатентован и разработан компанией International Communication Technologies s.r.o.</li>
+          <li>Модель эффективно работает в США на протяжении 4-х лет под брендом LV Networks, Strip Clubs Live. Количество просмотров
+          живой трансляции растет с каждым годом</li>
+          <li>Программа полностью соответствует Закону о защите несовершеннолетних от непристойного поведения и другим законодательным
+          актам международного права</li>
+          <li>Каждый второй зритель реалити-шоу в городе присутствия становится реальным клиентом стриптиз-клуба</li>
+          <li>Доходы клуба за счет внедрения программы увеличиваются на треть. Продукт интересен и выгоден владельцам заведения так же, как и вам</li>
+        </ul>
+      </div>
+    </section>
+    <section class="order">
+      <div class="holder">
+        <h2>Организуйте <span class="pink">стриптиз-шоу</span> в формате реалити и зарабатывайте <span class="pink">деньги, не выходя из дома</span></h2>
+        <div class="order-text">Хотите узнать подробности? <br>
+        Оставьте свой номер, и наш менеджер свяжется с вами</div>
+        <div class="order-form">
+          <form action="{% url 'landing:ticket' %}" method="post">
+            {% csrf_token %}
+            <fieldset>
+              <input type="text" name="name" class="input required" placeholder="Как вас зовут?">
+              <input type="text" name="phone" class="input required" placeholder="Введите ваш телефон">
+              <input type="hidden" name="theme" value="Консультация">
+              <div class="button-holder">
+                <button class="submit">Заказать консультацию</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </section>
+  {% endblock %}
   </div>
-  {{ SETUP.bottom_js|safe|default:'' }}
+  <footer id="footer">
+    <div class="holder">
+      <div class="footer-copy">
+        <div class="footer-copy-num">18+</div>
+        <div class="footer-copy-text">Информация на сайте <span class="pink">www.OnlineStipClub.pro</span> предназначена для лиц старше 18 лет</div>
+      </div>
+      <div class="footer-text">Все права защищены &copy; <script type="text/javascript">var mdate = new Date(); document.write(mdate.getFullYear());</script>
+      <a href="#hidden-block" class="fancybox">Политика конфиденциальности</a></div>
+      <div class="footer-right">
+        <a href="{% url 'landing:index' %}">Главная</a>
+        <a href="{% url 'landing:site' %}">Демо-сайт</a>
+        <a href="http://demo.onlinestribclub.pro/cabinet/">Демо-Кабинет</a>
+      </div>
+      <div id="hidden-block">
+        <h3>Политика конфиденциальности</h3>
+        <p>Мы не собираем личную информацию о Вас, когда Вы заходите на наш сайт.
+        Вы можете анонимно просматривать сайт. Тем не менее, Ваш браузер все же автоматически сообщает нам тип компьютера и операционной системы, которые Вы используете. Единственная личная информация о Вас, которую мы получаем, это те данные, которые Вы добровольно предоставляете при заполнении форм.
+        При заполнении форм на сайте у Вас запросят персональную информацию, такую как имя, номер телефона. Предоставление такой информации в ответ на запрос осуществляется Вами исключительно добровольно.
+        Предоставленная Вами информация используется чтобы оказать те услуги, которые Вы сами запрашиваете.
+        </p>
+      </div>
+      <div id="popup-form">
+        <p id="popup-form__title">Заказать консультацию</p>
+        <form action="{% url 'landing:ticket' %}" method="post">
+          {% csrf_token %}
+          <fieldset>
+            <input type="text" name="name" class="input required" placeholder="Как вас зовут?">
+            <input type="text" name="phone" class="input required" placeholder="Введите ваш телефон">
+            <input type="hidden" name="theme" value="Консультация">
+            <div class="button-holder">
+              <button class="submit">Заказать консультацию</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </footer>
+{{ SETUP.bottom_js|safe|default:'' }}
 </body>
 </html>

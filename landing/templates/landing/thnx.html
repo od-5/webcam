@@ -1,0 +1,17 @@
+﻿{% extends 'landing/index.html' %}
+{% load staticfiles %}
+{% block top_js %}
+<script type="text/javascript">
+  setTimeout('location.replace("{% url 'landing:index' %}")', 5000);
+</script>
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block content %}
+  <section class="demo">
+    <div class="holder">
+      <h2>Спасибо за заявку!</h2>
+      <h2>Мы свяжемся с Вами в ближайшее время!</h2>
+    </div>
+  </section>
+{% endblock %}

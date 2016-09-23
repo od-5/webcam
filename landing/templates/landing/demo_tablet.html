@@ -1,0 +1,15 @@
+﻿{% extends 'landing/index.html' %}
+{% load staticfiles %}
+{% block header %}
+{% endblock %}
+{% block content %}
+  <section class="demo">
+    <div class="holder">
+      <h2>Версия сайта для планшета</h2>
+      <a href="{% url 'landing:site' %}" class="demo-back__link">вернуться назад</a>
+      <div class="demo-tablet-view">
+        <iframe width="820" height="488" src=" http://demo.onlinestripclub.pro" frameborder="0" sandbox="allow-same-origin allow-forms allow-scripts" name="iframe" scrolling="auto"> </iframe>
+      </div>
+    </div>
+  </section>
+{% endblock %}

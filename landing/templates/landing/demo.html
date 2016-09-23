@@ -1,0 +1,47 @@
+﻿{% extends 'landing/index.html' %}
+{% load staticfiles %}
+{% block header %}
+{% endblock %}
+{% block content %}
+  <section class="demo">
+    <div class="holder">
+      <h2>Как будет выглядеть ваш сайт</h2>
+      <div class="demo-block">
+        <div class="demo-item demo-mobile">
+          <img src="{% static 'landing/images/media/demo1.png' %}" alt="">
+          <a href="{% url 'landing:site-mobile' %}" class="demo-link">+</a>
+        </div>
+        <div class="demo-item demo-tablet">
+          <a href="{% url 'landing:site-tablet' %}" class="demo-link">+</a>
+          <img src="{% static 'landing/images/media/demo2.png' %}" alt="">
+        </div>
+        <div class="demo-item demo-desktop">
+          <a href="http://demo.onlinestripclub.pro/" class="demo-link">Полная версия</a>
+          <img src="{% static 'landing/images/media/demo3.png' %}" alt="">
+        </div>
+      </div>
+      <div class="demo-slider">
+        <div class="owl-carousel">
+          <div class="demo-slide">
+            <div class="demo-item demo-mobile">
+              <img src="{% static 'landing/images/media/demo1.png' %}" alt="">
+              <a href="http://demo.onlinestripclub.pro/" class="demo-link">+</a>
+            </div>
+          </div>
+          <div class="demo-slide">
+            <div class="demo-item demo-tablet">
+              <a href="http://demo.onlinestripclub.pro/" class="demo-link">+</a>
+              <img src="{% static 'landing/images/media/demo2.png' %}" alt="">
+            </div>
+          </div>
+          <div class="demo-slide">
+            <div class="demo-item demo-desktop">
+              <a href="http://demo.onlinestripclub.pro/" class="demo-link">Полная версия</a>
+              <img src="{% static 'landing/images/media/demo3.png' %}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
