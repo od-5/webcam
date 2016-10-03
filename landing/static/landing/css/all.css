@@ -91,6 +91,8 @@ h2 {
 #wrapper {
     position: relative;
     overflow: hidden;
+    min-height: 100%;
+    padding-bottom: 143px;
 }
 /************************* header *************************/
 .video-bg {
@@ -315,10 +317,12 @@ h2 {
 }
 
 /************************* demo page *************************/
-.demo {
-    padding: 100px 0 150px;
+.demo-wrapper {
     background: url(../images/media/back3.jpg) 50% 0 no-repeat;
     background-size: cover;
+}
+.demo {
+    padding: 100px 0 150px;
 }
 .demo h2 {
     color: #fff;
@@ -747,6 +751,7 @@ label.error {
     overflow: hidden;
     position: relative;
     padding: 47px 0 45px;
+    margin-top: -143px;
     background: #000;
 }
 .footer-copy {
