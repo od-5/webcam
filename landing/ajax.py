@@ -10,7 +10,6 @@ from .forms import TicketForm
 __author__ = 'alexy'
 
 
-@ajax_request
 def ticket_send(request):
     email = Setup.objects.first().email
     # email = 'od-5@yandex.ru'
