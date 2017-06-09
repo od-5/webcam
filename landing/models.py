@@ -68,17 +68,20 @@ class Ticket(Common):
 def get_geophone_info(sender, **kwargs):
     ticket = kwargs['instance']
     if not ticket.id:
-        api_key = settings.HTMLWEB_API_KEY
-        data = getphoneObject(ticket.phone, api_key)
-        if 'country' in data:
-            if 'fullname' in data['country']:
-                ticket.country = data['country']['fullname']
-        elif 'fullname' in data:
-            ticket.country = data['fullname']
-        if '0' in data:
-            if 'name' in data['0']:
-                ticket.city = data['0']['name']
-            if 'time_zone' in data['0']:
-                ticket.time_zone = data['0']['time_zone']
-        if not ticket.time_zone and 'time_zone' in data:
-            ticket.time_zone = data['time_zone']
+        try:
+            api_key = settings.HTMLWEB_API_KEY
+            data = getphoneObject(ticket.phone, api_key)
+            if 'country' in data:
+                if 'fullname' in data['country']:
+                    ticket.country = data['country']['fullname']
+            elif 'fullname' in data:
+                ticket.country = data['fullname']
+            if '0' in data:
+                if 'name' in data['0']:
+                    ticket.city = data['0']['name']
+                if 'time_zone' in data['0']:
+                    ticket.time_zone = data['0']['time_zone']
+            if not ticket.time_zone and 'time_zone' in data:
+                ticket.time_zone = data['time_zone']
+        except:
+            pass
