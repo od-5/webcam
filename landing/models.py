@@ -1,7 +1,11 @@
 # coding=utf-8
+from django.conf import settings
 from django.db import models
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 from core.base_model import Common
 from core.models import User
+from core.phone_inform import getphoneObject
 
 __author__ = 'alexy'
 
@@ -56,4 +60,25 @@ class Ticket(Common):
     price = models.PositiveIntegerField(verbose_name=u'Сумма', blank=True, null=True)
     country = models.CharField(max_length=200, verbose_name=u'Страна', blank=True, null=True)
     city = models.CharField(max_length=200, verbose_name=u'Город', blank=True, null=True)
+    time_zone = models.CharField(max_length=10, verbose_name=u'Часовой пояс', blank=True, null=True)
     contact_date = models.DateField(verbose_name=u'Дата контакта', blank=True, null=True)
+
+
+@receiver(pre_save, sender=Ticket)
+def get_geophone_info(sender, **kwargs):
+    ticket = kwargs['instance']
+    if not ticket.id:
+        api_key = settings.HTMLWEB_API_KEY
+        data = getphoneObject(ticket.phone, api_key)
+        if 'country' in data:
+            if 'fullname' in data['country']:
+                ticket.country = data['country']['fullname']
+        elif 'fullname' in data:
+            ticket.country = data['fullname']
+        if '0' in data:
+            if 'name' in data['0']:
+                ticket.city = data['0']['name']
+            if 'time_zone' in data['0']:
+                ticket.time_zone = data['0']['time_zone']
+        if not ticket.time_zone and 'time_zone' in data:
+            ticket.time_zone = data['time_zone']

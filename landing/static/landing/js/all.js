@@ -3,6 +3,7 @@ $(document).ready(function(){
 	// fancybox
 	$('.fancybox').fancybox();
 	$('.js-popup-form__button').fancybox();
+	$(".input[name='phone']").mask("+7 (999) 999-99-99");
 	$('.work-popup').fancybox({
 		'width' : $(window).width() - 80,
 		'height' : $(window).height() - 80,

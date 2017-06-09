@@ -23,10 +23,11 @@ class TicketAdminForm(ModelForm):
 
 
 class TicketAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'created', 'status', 'manager')
+    list_display = ('name', 'phone', 'created', 'status', 'manager', 'country', 'city', 'time_zone')
     list_filter = ['created', 'status', 'manager', 'contact_date']
-    search_fields = ['manager',]
+    search_fields = ['manager', ]
     date_hierarchy = 'created'
+    readonly_fields = ('country', 'city', 'time_zone')
     fields = ('name', 'phone', 'country', 'city', 'time_zone', 'status', 'contact_date', 'manager', 'comment', 'sale')
     form = TicketAdminForm
 
