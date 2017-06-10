@@ -19,6 +19,18 @@ class LandingView(TemplateView):
         return context
 
 
+class ThnxView(TemplateView):
+    template_name = 'landing/thnx.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ThnxView, self).get_context_data()
+        setup = Setup.objects.first()
+        context.update({
+            'SETUP': setup,
+        })
+        return context
+
+
 def get_robots_txt(request):
     """
     Функция отображения robots.txt
